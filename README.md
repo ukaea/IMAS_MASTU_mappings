@@ -1,1 +1,1 @@
-# JSON_mappings
+# MAST-U IMAS Mappings
