@@ -1,0 +1,34 @@
+{
+    "ids_properties/homogeneous_time": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0
+    },
+    "signal_1/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 23.5
+    },
+    "signal_2/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Hello World"
+    },
+    "signal_3/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": [1,2,3,4,5]
+    },
+    "signal_4/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ Hello }}"
+    },
+    "signal_5/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ UNIT_SF }}"
+    },
+    "signal_6/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ DEG2RAD }}"
+    },
+    "signal_7/test": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ COIL_NAMES.1 }}"
+    }
+}
