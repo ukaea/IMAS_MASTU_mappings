@@ -2,37 +2,5 @@
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0
-    },
-
-    "channel/Shape_of": {
-        "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "channel/#/active_spatial_resolution/#/centre/r"
-    },
-    "channel/#/active_spatial_resolution/Shape_of": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "channel/#/active_spatial_resolution/#/centre/r": {
-        "MAP_TYPE": "MAP",
-        "KEY": "AMS/GEOMETRY/RADIUS",
-        "PLUGIN": "UDA"
-    },
-    "channel/#/active_spatial_resolution/#/centre/z": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0.0
-    },
-    "channel/#/active_spatial_resolution/#/centre/phi": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0.0
-    },
-    "channel/#/active_spatial_resolution/#/geometric_coefficients": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9]
-    },
-    "channel/#/polarisation_angle": {
-        "MAP_TYPE": "SLICE",
-        "KEY": "AMS/GAMMA/POLARISATION_ANGLE",
-        "PLUGIN": "UDA",
-        "SLICE_INDEX": "1;2"
     }
 }

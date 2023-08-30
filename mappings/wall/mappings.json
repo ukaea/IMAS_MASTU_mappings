@@ -7,27 +7,27 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
-    "description_2d/#/type/name": {
+    "description_2d[#]/type/name": {
         "MAP_TYPE": "VALUE",
         "VALUE": "Equilibrium codes"
     },
-    "description_2d/#/type/index": {
+    "description_2d[#]/type/index": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0
     },
-    "description_2d/#/type/description": {
+    "description_2d[#]/type/description": {
         "MAP_TYPE": "VALUE",
         "VALUE": "A limiting surface for EFIT++"
     },
-    "description_2d/#/limiter/unit/Shape_of": {
+    "description_2d[#]/limiter/unit/Shape_of": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
-    "description_2d/#/limiter/unit/#/closed": {
+    "description_2d[#]/limiter/unit[#]/closed": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
-    "description_2d/#/limiter/unit/#/outline/r": {
+    "description_2d[#]/limiter/unit[#]/outline/r": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOM",
         "ARGS": {
@@ -35,7 +35,7 @@
             "key": "R"
         }
     },
-    "description_2d/#/limiter/unit/#/outline/z": {
+    "description_2d[#]/limiter/unit[#]/outline/z": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOM",
         "ARGS": {

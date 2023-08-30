@@ -7,15 +7,15 @@
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ length(PF_COILS) }}"
     },
-    "coil/#/name" : {
+    "coil[#]/name" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ PF_NAME }}"
     },
-    "coil/#/identifier" : {
+    "coil[#]/identifier" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "PF_COIL_{{ indices.0 }}"
     },
-    "coil/#/current" : {
+    "coil[#]/current" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
@@ -23,19 +23,19 @@
         },
         "SCALE": "{{ UNIT_SF }}"
     },
-    "coil/#/function/type" : {
+    "coil[#]/function/type" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ FUNCTION }}"
     },
-    "coil/#/element/Shape_of" : {
+    "coil[#]/element/Shape_of" : {
         "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "coil/#/element/#/geometry/rectangle/z"
+        "DIM_PROBE": "coil[#]/element[#]/geometry/rectangle/z"
     },
-    "coil/#/element/#/geometry/geometry_type": {
+    "coil[#]/element[#]/geometry/geometry_type": {
         "MAP_TYPE": "VALUE",
         "VALUE": 2
     },       
-    "coil/#/element/#/geometry/rectangle/width": {
+    "coil[#]/element[#]/geometry/rectangle/width": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOM",
         "ARGS": {
@@ -43,7 +43,7 @@
             "key": "geom_elements.dR"
         }
     },
-    "coil/#/element/#/geometry/rectangle/height": {
+    "coil[#]/element[#]/geometry/rectangle/height": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOM",
         "ARGS": {
@@ -51,7 +51,7 @@
             "key": "geom_elements.dZ"
         }
     },
-    "coil/#/element/#/geometry/rectangle/r": {
+    "coil[#]/element[#]/geometry/rectangle/r": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOM",
         "ARGS": {
@@ -59,7 +59,7 @@
             "key": "geom_elements.centreR"
         }
     },
-    "coil/#/element/#/geometry/rectangle/z": {
+    "coil[#]/element[#]/geometry/rectangle/z": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOM",
         "ARGS": {
@@ -67,11 +67,11 @@
             "key": "geom_elements.centreZ"
         }
     },
-    "coil/#/element/#/area": {
+    "coil[#]/element[#]/area": {
         "MAP_TYPE": "EXPR",
         "PARAMETERS": {
-            "WIDTH": "coil/#/element/#/geometry/rectangle/width",
-            "HEIGHT": "coil/#/element/#/geometry/rectangle/height"
+            "WIDTH": "coil[#]/element[#]/geometry/rectangle/width",
+            "HEIGHT": "coil[#]/element[#]/geometry/rectangle/height"
         },
         "EXPR": "WIDTH*HEIGHT"
     },
@@ -79,15 +79,15 @@
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ NUM_SUPPLY }}"
     },
-    "circuit/#/name" : {
+    "circuit[#]/name" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "CIRCUIT_{{ PF_PS_NAME }}"
     },
-    "circuit/#/identifier" : {
+    "circuit[#]/identifier" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "CIRCUIT_{{ indices.0 }}"
     },
-    "circuit/#/current" : {
+    "circuit[#]/current" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
@@ -95,7 +95,7 @@
         },
         "SCALE": "{{ UNIT_SF }}"
     },
-    "circuit/#/voltage" : {
+    "circuit[#]/voltage" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
@@ -106,15 +106,15 @@
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ NUM_SUPPLY }}"
     },
-    "supply/#/name" : {
+    "supply[#]/name" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ PF_PS_NAME }}"
     },
-    "supply/#/identifier" : {
+    "supply[#]/identifier" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "SUPPLY_{{ indices.0 }}"
     },
-    "supply/#/current" : {
+    "supply[#]/current" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
@@ -122,7 +122,7 @@
         },
         "SCALE": "{{ UNIT_SF }}"
     },
-    "supply/#/voltage" : {
+    "supply[#]/voltage" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
