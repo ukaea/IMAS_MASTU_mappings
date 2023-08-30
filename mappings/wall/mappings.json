@@ -1,6 +1,46 @@
 {
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },
+    "description_2d/Shape_of": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "description_2d/#/type/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Equilibrium codes"
+    },
+    "description_2d/#/type/index": {
+        "MAP_TYPE": "VALUE",
         "VALUE": 0
+    },
+    "description_2d/#/type/description": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "A limiting surface for EFIT++"
+    },
+    "description_2d/#/limiter/unit/Shape_of": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "description_2d/#/limiter/unit/#/closed": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "description_2d/#/limiter/unit/#/outline/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "/limiter/efit",
+            "key": "R"
+        }
+    },
+    "description_2d/#/limiter/unit/#/outline/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "/limiter/efit",
+            "key": "Z"
+        }
     }
 }

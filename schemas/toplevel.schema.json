@@ -3,27 +3,25 @@
     "$id": "/schemas/toplevel",
     "description": "JSON Schema for v1.0 of default top-level mappings",
     "type": "object",
-    "properties": {
-        "patternProperties": {
-            "^([a-z]+[^0-9])$": {
-                "type": "object",
-                "required": [ "MAP_TYPE" ],
-                "properties": {
-                    "MAP_TYPE": {
-                        "type": "string",
-                        "enum": ["VALUE", "MAP", "OFFSET", "SCALE", "EXPR", "DIMENSION"],
-                        "default": "VALUE"
-                    }
-                },
-                "oneOf": [
-                    { "$ref": "#/$defs/VALUE" },
-                    { "$ref": "#/$defs/MAP" },
-                    { "$ref": "#/$defs/OFFSET" },
-                    { "$ref": "#/$defs/SCALE" },
-                    { "$ref": "#/$defs/EXPR" },
-                    { "$ref": "#/$defs/DIMENSION" }
-                ]
-            }
+    "patternProperties": {
+        "^.*$": {
+            "type": "object",
+            "required": [ "MAP_TYPE" ],
+            "properties": {
+                "MAP_TYPE": {
+                    "type": "string",
+                    "enum": ["VALUE", "PLUGIN", "SLICE", "EXPR", "DIMENSION", "CUSTOM"],
+                    "default": "VALUE"
+                }
+            },
+            "oneOf": [
+                { "$ref": "#/$defs/VALUE" },
+                { "$ref": "#/$defs/PLUGIN" },
+                { "$ref": "#/$defs/EXPR" },
+                { "$ref": "#/$defs/SLICE" },
+                { "$ref": "#/$defs/DIMENSION" },
+                { "$ref": "#/$defs/CUSTOM" }
+            ]
         },
         "additionalProperties": true
     },
@@ -50,49 +48,43 @@
             ],
             "additionalProperties": false
         },
-        "MAP": {
+        "PLUGIN": {
             "properties": {
-                "MAP_TYPE": { "const": "MAP" },
-                "KEY": { "type": "string" },
-                "VAR": { "type": "string" },
-                "PLUGIN": { "enum": ["UDA", "GEOMETRY"] }
+                "MAP_TYPE": { "const": "PLUGIN" },
+                "ARGS": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^.*$": {
+                            "type": ["string", "boolean"]
+                        }
+                    }
+                },
+                "PLUGIN": { "type": "string"  },
+                "OFFSET": { "type": ["string", "number"] },
+                "SCALE": { "type": ["string", "number"] }
             },
             "required": [
                         "MAP_TYPE",
-                        "KEY",
+                        "ARGS",
                         "PLUGIN"
             ],
             "additionalProperties": false
         },
-        "OFFSET": {
+        "SLICE": {
             "properties": {
-                "MAP_TYPE": { "const": "OFFSET" },
-                "KEY": { "type": "string" },
-                "VAR": { "type": "string" },
-                "PLUGIN": { "enum": ["UDA", "GEOMETRY"] },
-                "OFFSET": { "type": "number" }
+                "MAP_TYPE": { "const": "SLICE" },
+                "SLICE_INDEX": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SIGNAL": { "type": "string" }
             },
             "required": [
-                            "MAP_TYPE",
-                            "KEY",
-                            "PLUGIN",
-                            "OFFSET"
-            ],
-            "additionalProperties": false
-        },
-        "SCALE": {
-            "properties": {
-                "MAP_TYPE": { "const": "SCALE" },
-                "KEY": { "type": "string" },
-                "VAR": { "type": "string" },
-                "PLUGIN": { "enum": ["UDA", "GEOMETRY"] },
-                "SCALAR": { "type": "number" }
-            },
-            "required": [
-                            "MAP_TYPE",
-                            "KEY",
-                            "PLUGIN",
-                            "SCALAR"
+                        "MAP_TYPE",
+                        "SLICE_INDEX",
+                        "SIGNAL"
             ],
             "additionalProperties": false
         },
@@ -116,6 +108,16 @@
                             "EXPR"
             ],
             "additionalProperties": false
+        },
+        "CUSTOM": {
+            "properties": {
+                "MAP_TYPE": { "const": "CUSTOM" }
+            },
+            "required": [
+                            "MAP_TYPE",
+                            "CUSTOM_TYPE"
+            ],
+            "additionalProperties": true
         }
     }
 }

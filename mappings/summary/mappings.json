@@ -1,0 +1,107 @@
+{
+    "ids_properties/homogeneous_time": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },
+    "globals_quantities/ip/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/AMC/PLASMA_CURRENT"
+        },
+        "SCALE": 1000
+    },
+    "global_quantities/r0": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0.8
+    },
+    "global_quantities/b0": {
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+            "X": "_BVACRADIUSPRODUCT",
+            "Y": "global_quantities/r0"
+            
+        },
+        "EXPR": "X/Y"
+    },
+    "_BVACRADIUSPRODUCT": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/INPUT/BVACRADIUSPRODUCT"
+        }
+    },
+    "global_quantities/q_95": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/epm/output/globalParameters/q95"
+        }
+    },
+    "global_quantities/power_ohm": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "<to be added to ESM>"
+        }
+    },
+    "global_quantities/beta_tor": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
+        },
+        "COMMENT": "NEED TO CHECK"
+    },
+    "boundary/elongation": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION"
+        }
+    },
+    "boundary/triangularity_upper": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
+        }
+    },
+    "boundary/triangularity_lower": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
+        }
+    },
+    "local/magnetics_axis/n_e": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "<to be added to ESM>"
+        }
+    },
+    "local/magnetics_axis/t_e": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "<to be added to ESM>"
+        }
+    },
+    "_local/magnetics_axis/p_e": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "<to be added to ESM>"
+        },
+        "COMMENT": "No equivalent in the IDS"
+    },
+    "heating_current_drive/power_nbi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/ANB/SUM/POWER"
+        },
+        "SCALE": "10e6"
+    }
+}

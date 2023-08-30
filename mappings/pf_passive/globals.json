@@ -1,8 +1,188 @@
 {
-    "Comment": "Add any variables in here that are needed by your mappings",
-    "Templating": "These can be used for substitution in the signal names",
-    "Hello": "World",
+    "DEG2RAD": 0.0174532925199,
     "UNIT_SF": 1000,
-    "DEG2RAD": "0.01745329",
-    "COIL_NAMES": ["COIL_1", "COIL_2", "COIL_3"]
+    "PASSIVE_NAME": "{{ at(LOOPS, indices.0).NAME }}",
+    "PASSIVE_CURRENT": "{{ at(LOOPS, indices.0).CURRENT }}",
+    "LOOPS": [
+        {
+            "NAME": "centrecolumn",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "centrecolumn_tiles",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "colosseum_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "colosseum_outer_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "colosseum_outer_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "colosseum_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "cryopump_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "cryopump_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "d1_case_lower",
+            "CURRENT": "/AMC/CASECURR/D1L"
+        },
+        {
+            "NAME": "d1_case_upper",
+            "CURRENT": "/AMC/CASECURR/D1U"
+        },
+        {
+            "NAME": "d1_support_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "d1_support_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "d2_case_lower",
+            "CURRENT": "/AMC/CASECURR/D2U"
+        },
+        {
+            "NAME": "d2_case_upper",
+            "CURRENT": "/AMC/CASECURR/D2U"
+        },
+        {
+            "NAME": "d3_case_lower",
+            "CURRENT": "/AMC/CASECURR/D3U"
+        },
+        {
+            "NAME": "d3_case_upper",
+            "CURRENT": "/AMC/CASECURR/D3U"
+        },
+        {
+            "NAME": "d5_case_lower",
+            "CURRENT": "/AMC/CASECURR/D5U"
+        },
+        {
+            "NAME": "d5_case_upper",
+            "CURRENT": "/AMC/CASECURR/D5U"
+        },
+        {
+            "NAME": "d6_case_lower",
+            "CURRENT": "/AMC/CASECURR/D6U"
+        },
+        {
+            "NAME": "d6_case_upper",
+            "CURRENT": "/AMC/CASECURR/D6U"
+        },
+        {
+            "NAME": "d7_case_lower",
+            "CURRENT": "/AMC/CASECURR/D7U"
+        },
+        {
+            "NAME": "d7_case_upper",
+            "CURRENT": "/AMC/CASECURR/D7U"
+        },
+        {
+            "NAME": "div_tiles_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "div_tiles_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "dp_case_lower",
+            "CURRENT": "/AMC/CASECURR/DPU"
+        },
+        {
+            "NAME": "dp_case_upper",
+            "CURRENT": "/AMC/CASECURR/DPU"
+        },
+        {
+            "NAME": "gas_baffle_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "gas_baffle_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "nose_baffle_tiles_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "nose_baffle_tiles_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "p4_case_lower",
+            "CURRENT": "/AMC/CASECURR/P4L"
+        },
+        {
+            "NAME": "p4_case_upper",
+            "CURRENT": "/AMC/CASECURR/P4U"
+        },
+        {
+            "NAME": "p5_case_lower",
+            "CURRENT": "/AMC/CASECURR/P5L"
+        },
+        {
+            "NAME": "p5_case_upper",
+            "CURRENT": "/AMC/CASECURR/P5U"
+        },
+        {
+            "NAME": "p6_case_lower",
+            "CURRENT": "/AMC/CASECURR/P6L"
+        },
+        {
+            "NAME": "p6_case_upper",
+            "CURRENT": "/AMC/CASECURR/P6U"
+        },
+        {
+            "NAME": "psp_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "psp_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "ring_plate_major_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "ring_plate_major_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "ring_plate_minor_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "ring_plate_minor_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "triangle_lower",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "triangle_upper",
+            "CURRENT": ""
+        },
+        {
+            "NAME": "vessel",
+            "CURRENT": ""
+        }
+    ]
 }

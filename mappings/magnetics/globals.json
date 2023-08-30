@@ -1,8 +1,1378 @@
 {
     "Comment": "Add any variables in here that are needed by your mappings",
     "Templating": "These can be used for substitution in the signal names",
-    "Hello": "World",
-    "UNIT_SF": 1000,
-    "DEG2RAD": "0.01745329",
-    "COIL_NAMES": ["COIL_1", "COIL_2", "COIL_3"]
+    "DEG2RAD": 0.0174532925199,
+    "FL_TYPE_MAP": {"FLUX": 1, "SADDLE": 2},
+    "FL_TYPE": "{{ at(FLUX_LOOPS, indices.0).TYPE }}",
+    "FL_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOP_NAME }}",
+    "LOOPV_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOPV }}",
+    "BPOL_NAME": "{{ at(BPOL_PROBES, indices.0) }}",
+    "FL_POSITION_MAP": {"FLUX": "coordinate", "SADDLE": "coilPath"},
+    "FLUX_LOOPS": [
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BL_01",
+            "LOOPV": "LV_BL_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BL_02",
+            "LOOPV": "LV_BL_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BL_03",
+            "LOOPV": "LV_BL_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BL_04",
+            "LOOPV": "LV_BL_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BU_01",
+            "LOOPV": "LV_BU_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BU_02",
+            "LOOPV": "LV_BU_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BU_03",
+            "LOOPV": "LV_BU_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_BU_04",
+            "LOOPV": "LV_BU_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A01",
+            "LOOPV": "LV_C_A01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A02",
+            "LOOPV": "LV_C_A02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A03",
+            "LOOPV": "LV_C_A03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A04",
+            "LOOPV": "LV_C_A04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A05",
+            "LOOPV": "LV_C_A05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A06",
+            "LOOPV": "LV_C_A06"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A07",
+            "LOOPV": "LV_C_A07"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A08",
+            "LOOPV": "LV_C_A08"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A09",
+            "LOOPV": "LV_C_A09"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A10",
+            "LOOPV": "LV_C_A10"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A11",
+            "LOOPV": "LV_C_A11"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_A12",
+            "LOOPV": "LV_C_A12"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B01",
+            "LOOPV": "LV_C_B01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B02",
+            "LOOPV": "LV_C_B02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B03",
+            "LOOPV": "LV_C_B03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B04",
+            "LOOPV": "LV_C_B04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B05",
+            "LOOPV": "LV_C_B05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B06",
+            "LOOPV": "LV_C_B06"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B07",
+            "LOOPV": "LV_C_B07"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B08",
+            "LOOPV": "LV_C_B08"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B09",
+            "LOOPV": "LV_C_B09"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B10",
+            "LOOPV": "LV_C_B10"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B11",
+            "LOOPV": "LV_C_B11"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_C_B12",
+            "LOOPV": "LV_C_B12"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1L_01",
+            "LOOPV": "LV_D1L_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1L_02",
+            "LOOPV": "LV_D1L_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1L_03",
+            "LOOPV": "LV_D1L_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1L_04",
+            "LOOPV": "LV_D1L_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1U_01",
+            "LOOPV": "LV_D1U_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1U_02",
+            "LOOPV": "LV_D1U_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1U_03",
+            "LOOPV": "LV_D1U_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D1U_04",
+            "LOOPV": "LV_D1U_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2L_01",
+            "LOOPV": "LV_D2L_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2L_02",
+            "LOOPV": "LV_D2L_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2L_03",
+            "LOOPV": "LV_D2L_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2L_04",
+            "LOOPV": "LV_D2L_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2U_01",
+            "LOOPV": "LV_D2U_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2U_02",
+            "LOOPV": "LV_D2U_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2U_03",
+            "LOOPV": "LV_D2U_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D2U_04",
+            "LOOPV": "LV_D2U_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3L_01",
+            "LOOPV": "LV_D3L_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3L_02",
+            "LOOPV": "LV_D3L_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3L_03",
+            "LOOPV": "LV_D3L_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3L_04",
+            "LOOPV": "LV_D3L_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3U_01",
+            "LOOPV": "LV_D3U_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3U_02",
+            "LOOPV": "LV_D3U_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3U_03",
+            "LOOPV": "LV_D3U_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_D3U_04",
+            "LOOPV": "LV_D3U_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPL_01",
+            "LOOPV": "LV_DPL_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPL_02",
+            "LOOPV": "LV_DPL_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPL_03",
+            "LOOPV": "LV_DPL_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPL_04",
+            "LOOPV": "LV_DPL_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPU_01",
+            "LOOPV": "LV_DPU_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPU_02",
+            "LOOPV": "LV_DPU_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPU_03",
+            "LOOPV": "LV_DPU_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_DPU_04",
+            "LOOPV": "LV_DPU_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_01",
+            "LOOPV": "LV_NL_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_02",
+            "LOOPV": "LV_NL_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_03",
+            "LOOPV": "LV_NL_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_04",
+            "LOOPV": "LV_NL_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_06",
+            "LOOPV": "LV_NL_06"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_A05",
+            "LOOPV": "LV_NL_A05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NL_B05",
+            "LOOPV": "LV_NL_B05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_01",
+            "LOOPV": "LV_NU_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_02",
+            "LOOPV": "LV_NU_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_03",
+            "LOOPV": "LV_NU_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_04",
+            "LOOPV": "LV_NU_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_06",
+            "LOOPV": "LV_NU_06"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_A05",
+            "LOOPV": "LV_NU_A05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_NU_B05",
+            "LOOPV": "LV_NU_B05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5L_01",
+            "LOOPV": "LV_P5L_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5L_02",
+            "LOOPV": "LV_P5L_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5L_03",
+            "LOOPV": "LV_P5L_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5L_04",
+            "LOOPV": "LV_P5L_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5U_01",
+            "LOOPV": "LV_P5U_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5U_02",
+            "LOOPV": "LV_P5U_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5U_03",
+            "LOOPV": "LV_P5U_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P5U_04",
+            "LOOPV": "LV_P5U_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P6L_01",
+            "LOOPV": "LV_P6L_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_P6U_01",
+            "LOOPV": "LV_P6U_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_01",
+            "LOOPV": "LV_XL_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_02",
+            "LOOPV": "LV_XL_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_03",
+            "LOOPV": "LV_XL_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_04",
+            "LOOPV": "LV_XL_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_05",
+            "LOOPV": "LV_XL_05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_06",
+            "LOOPV": "LV_XL_06"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XL_07",
+            "LOOPV": "LV_XL_07"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_01",
+            "LOOPV": "LV_XU_01"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_02",
+            "LOOPV": "LV_XU_02"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_03",
+            "LOOPV": "LV_XU_03"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_04",
+            "LOOPV": "LV_XU_04"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_05",
+            "LOOPV": "LV_XU_05"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_06",
+            "LOOPV": "LV_XU_06"
+        },
+        {
+            "TYPE": "FLUX",
+            "LOOP_NAME": "F_XU_07",
+            "LOOPV": "LV_XU_07"
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_030A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_030B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_090A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_090B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_150A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_150B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_210A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_210B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_270A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_270B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_330A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCL_330B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_030A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_030B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_090A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_090B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_150A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_150B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_210A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_210B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_270A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_270B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_330A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_CCU_330B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_007_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_022_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_037_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_052_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_067_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_082_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_097_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_112_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_127_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_142_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_157_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_172_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_187_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_202_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_217_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_232_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_247_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_262_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_277_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_292_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_307_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_322_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_337_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NL_352_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_007_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_022_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_037_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_052_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_067_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_082_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_097_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_112_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_127_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_142_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_157_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_172_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_187_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_202_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_217_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_232_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_247_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_262_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_277_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_292_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_307_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_322_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_337_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_NU_352_5",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_015A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_015B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_045A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_075A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_075B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_105A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_105B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_135A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_135B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_165A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_165B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_195A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_195B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_225A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_255A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_255B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_285A",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_315B",
+            "LOOPV": ""
+        },
+        {
+            "TYPE": "SADDLE",
+            "LOOP_NAME": "S_O_345B",
+            "LOOPV": ""
+        }
+    ],
+    "BPOL_PROBES": [
+        "B_BL1_N02",
+        "B_BL1_N04",
+        "B_BL1_N06",
+        "B_BL1_N08",
+        "B_BL1_N10",
+        "B_BL1_P01",
+        "B_BL1_P03",
+        "B_BL1_P05",
+        "B_BL1_P07",
+        "B_BL1_P09",
+        "B_BL1_P11",
+        "B_BL2_N02",
+        "B_BL2_N04",
+        "B_BL2_N06",
+        "B_BL2_N08",
+        "B_BL2_N10",
+        "B_BL2_P01",
+        "B_BL2_P03",
+        "B_BL2_P05",
+        "B_BL2_P07",
+        "B_BL2_P09",
+        "B_BL2_P11",
+        "B_BU1_N02",
+        "B_BU1_N04",
+        "B_BU1_N06",
+        "B_BU1_N08",
+        "B_BU1_N10",
+        "B_BU1_P01",
+        "B_BU1_P03",
+        "B_BU1_P05",
+        "B_BU1_P07",
+        "B_BU1_P09",
+        "B_BU1_P11",
+        "B_BU2_N02",
+        "B_BU2_N04",
+        "B_BU2_N06",
+        "B_BU2_N08",
+        "B_BU2_N10",
+        "B_BU2_P01",
+        "B_BU2_P03",
+        "B_BU2_P05",
+        "B_BU2_P07",
+        "B_BU2_P09",
+        "B_BU2_P11",
+        "B_C1_P01",
+        "B_C1_P03",
+        "B_C1_P05",
+        "B_C1_P07",
+        "B_C1_P09",
+        "B_C1_P10",
+        "B_C1_P12",
+        "B_C1_P14",
+        "B_C1_P15",
+        "B_C1_P16",
+        "B_C1_P18",
+        "B_C1_P20",
+        "B_C1_P22",
+        "B_C1_P23",
+        "B_C1_P25",
+        "B_C1_P27",
+        "B_C1_P28",
+        "B_C1_P30",
+        "B_C1_P32",
+        "B_C1_P33",
+        "B_C1_P35",
+        "B_C1_P37",
+        "B_C1_P39",
+        "B_C1_P40",
+        "B_C1_P41",
+        "B_C1_P43",
+        "B_C1_P45",
+        "B_C1_P46",
+        "B_C1_P48",
+        "B_C1_P50",
+        "B_C1_P52",
+        "B_C1_P54",
+        "B_C1_T02",
+        "B_C1_T04",
+        "B_C1_T06",
+        "B_C1_T08",
+        "B_C1_T11",
+        "B_C1_T13",
+        "B_C1_T17",
+        "B_C1_T19",
+        "B_C1_T21",
+        "B_C1_T24",
+        "B_C1_T26",
+        "B_C1_T29",
+        "B_C1_T31",
+        "B_C1_T34",
+        "B_C1_T36",
+        "B_C1_T38",
+        "B_C1_T42",
+        "B_C1_T44",
+        "B_C1_T47",
+        "B_C1_T49",
+        "B_C1_T51",
+        "B_C1_T53",
+        "B_C2_P01",
+        "B_C2_P03",
+        "B_C2_P05",
+        "B_C2_P07",
+        "B_C2_P09",
+        "B_C2_P10",
+        "B_C2_P12",
+        "B_C2_P14",
+        "B_C2_P15",
+        "B_C2_P16",
+        "B_C2_P18",
+        "B_C2_P20",
+        "B_C2_P22",
+        "B_C2_P23",
+        "B_C2_P25",
+        "B_C2_P27",
+        "B_C2_P28",
+        "B_C2_P30",
+        "B_C2_P32",
+        "B_C2_P33",
+        "B_C2_P35",
+        "B_C2_P37",
+        "B_C2_P39",
+        "B_C2_P40",
+        "B_C2_P41",
+        "B_C2_P43",
+        "B_C2_P45",
+        "B_C2_P46",
+        "B_C2_P48",
+        "B_C2_P50",
+        "B_C2_P52",
+        "B_C2_P54",
+        "B_C2_T02",
+        "B_C2_T04",
+        "B_C2_T06",
+        "B_C2_T08",
+        "B_C2_T11",
+        "B_C2_T13",
+        "B_C2_T17",
+        "B_C2_T19",
+        "B_C2_T21",
+        "B_C2_T24",
+        "B_C2_T26",
+        "B_C2_T29",
+        "B_C2_T31",
+        "B_C2_T34",
+        "B_C2_T36",
+        "B_C2_T38",
+        "B_C2_T42",
+        "B_C2_T44",
+        "B_C2_T47",
+        "B_C2_T49",
+        "B_C2_T51",
+        "B_C2_T53",
+        "B_NL1_N02",
+        "B_NL1_N04",
+        "B_NL1_N06",
+        "B_NL1_N08",
+        "B_NL1_N10",
+        "B_NL1_P01",
+        "B_NL1_P03",
+        "B_NL1_P05",
+        "B_NL1_P07",
+        "B_NL1_P09",
+        "B_NL1_P11",
+        "B_NL2_N02",
+        "B_NL2_N04",
+        "B_NL2_N06",
+        "B_NL2_N08",
+        "B_NL2_N10",
+        "B_NL2_P01",
+        "B_NL2_P03",
+        "B_NL2_P05",
+        "B_NL2_P07",
+        "B_NL2_P09",
+        "B_NL2_P11",
+        "B_NU1_N02",
+        "B_NU1_N04",
+        "B_NU1_N06",
+        "B_NU1_N08",
+        "B_NU1_N10",
+        "B_NU1_P01",
+        "B_NU1_P03",
+        "B_NU1_P05",
+        "B_NU1_P07",
+        "B_NU1_P09",
+        "B_NU1_P11",
+        "B_NU2_N02",
+        "B_NU2_N04",
+        "B_NU2_N06",
+        "B_NU2_N08",
+        "B_NU2_N10",
+        "B_NU2_P01",
+        "B_NU2_P03",
+        "B_NU2_P05",
+        "B_NU2_P07",
+        "B_NU2_P09",
+        "B_NU2_P11",
+        "B_O1_N02",
+        "B_O1_N04",
+        "B_O1_N06",
+        "B_O1_N08",
+        "B_O1_N11",
+        "B_O1_N13",
+        "B_O1_N15",
+        "B_O1_N17",
+        "B_O1_N19",
+        "B_O1_N22",
+        "B_O1_N24",
+        "B_O1_N26",
+        "B_O1_N28",
+        "B_O1_P01",
+        "B_O1_P03",
+        "B_O1_P05",
+        "B_O1_P07",
+        "B_O1_P09",
+        "B_O1_P10",
+        "B_O1_P12",
+        "B_O1_P14",
+        "B_O1_P16",
+        "B_O1_P18",
+        "B_O1_P20",
+        "B_O1_P21",
+        "B_O1_P23",
+        "B_O1_P25",
+        "B_O1_P27",
+        "B_O1_P29",
+        "B_O2_N02",
+        "B_O2_N04",
+        "B_O2_N06",
+        "B_O2_N08",
+        "B_O2_N11",
+        "B_O2_N13",
+        "B_O2_N15",
+        "B_O2_N17",
+        "B_O2_N19",
+        "B_O2_N22",
+        "B_O2_N24",
+        "B_O2_N26",
+        "B_O2_N28",
+        "B_O2_P01",
+        "B_O2_P03",
+        "B_O2_P05",
+        "B_O2_P07",
+        "B_O2_P09",
+        "B_O2_P10",
+        "B_O2_P12",
+        "B_O2_P14",
+        "B_O2_P16",
+        "B_O2_P18",
+        "B_O2_P20",
+        "B_O2_P21",
+        "B_O2_P23",
+        "B_O2_P25",
+        "B_O2_P27",
+        "B_O2_P29",
+        "B_XL1_N01",
+        "B_XL1_N03",
+        "B_XL1_N05",
+        "B_XL1_N07",
+        "B_XL1_N09",
+        "B_XL1_N11",
+        "B_XL1_N13",
+        "B_XL1_N15",
+        "B_XL1_N17",
+        "B_XL1_N20",
+        "B_XL1_N22",
+        "B_XL1_N24",
+        "B_XL1_N25",
+        "B_XL1_N27",
+        "B_XL1_N29",
+        "B_XL1_N31",
+        "B_XL1_N33",
+        "B_XL1_N35",
+        "B_XL1_P02",
+        "B_XL1_P04",
+        "B_XL1_P06",
+        "B_XL1_P08",
+        "B_XL1_P10",
+        "B_XL1_P12",
+        "B_XL1_P14",
+        "B_XL1_P16",
+        "B_XL1_P18",
+        "B_XL1_P19",
+        "B_XL1_P21",
+        "B_XL1_P23",
+        "B_XL1_P26",
+        "B_XL1_P28",
+        "B_XL1_P30",
+        "B_XL1_P32",
+        "B_XL1_P34",
+        "B_XL1_P36",
+        "B_XL2_N01",
+        "B_XL2_N03",
+        "B_XL2_N05",
+        "B_XL2_N07",
+        "B_XL2_N09",
+        "B_XL2_N11",
+        "B_XL2_N13",
+        "B_XL2_N15",
+        "B_XL2_N17",
+        "B_XL2_N20",
+        "B_XL2_N22",
+        "B_XL2_N24",
+        "B_XL2_N25",
+        "B_XL2_N27",
+        "B_XL2_N29",
+        "B_XL2_N31",
+        "B_XL2_N33",
+        "B_XL2_N35",
+        "B_XL2_P02",
+        "B_XL2_P04",
+        "B_XL2_P06",
+        "B_XL2_P08",
+        "B_XL2_P10",
+        "B_XL2_P12",
+        "B_XL2_P14",
+        "B_XL2_P16",
+        "B_XL2_P18",
+        "B_XL2_P19",
+        "B_XL2_P21",
+        "B_XL2_P23",
+        "B_XL2_P26",
+        "B_XL2_P28",
+        "B_XL2_P30",
+        "B_XL2_P32",
+        "B_XL2_P34",
+        "B_XL2_P36",
+        "B_XU1_N01",
+        "B_XU1_N03",
+        "B_XU1_N05",
+        "B_XU1_N07",
+        "B_XU1_N09",
+        "B_XU1_N11",
+        "B_XU1_N13",
+        "B_XU1_N15",
+        "B_XU1_N17",
+        "B_XU1_N20",
+        "B_XU1_N22",
+        "B_XU1_N24",
+        "B_XU1_N25",
+        "B_XU1_N27",
+        "B_XU1_N29",
+        "B_XU1_N31",
+        "B_XU1_N33",
+        "B_XU1_N35",
+        "B_XU1_P02",
+        "B_XU1_P04",
+        "B_XU1_P06",
+        "B_XU1_P08",
+        "B_XU1_P10",
+        "B_XU1_P12",
+        "B_XU1_P14",
+        "B_XU1_P16",
+        "B_XU1_P18",
+        "B_XU1_P19",
+        "B_XU1_P21",
+        "B_XU1_P23",
+        "B_XU1_P26",
+        "B_XU1_P28",
+        "B_XU1_P30",
+        "B_XU1_P32",
+        "B_XU1_P34",
+        "B_XU1_P36",
+        "B_XU2_N01",
+        "B_XU2_N03",
+        "B_XU2_N05",
+        "B_XU2_N07",
+        "B_XU2_N09",
+        "B_XU2_N11",
+        "B_XU2_N13",
+        "B_XU2_N15",
+        "B_XU2_N17",
+        "B_XU2_N20",
+        "B_XU2_N22",
+        "B_XU2_N24",
+        "B_XU2_N25",
+        "B_XU2_N27",
+        "B_XU2_N29",
+        "B_XU2_N31",
+        "B_XU2_N33",
+        "B_XU2_N35",
+        "B_XU2_P02",
+        "B_XU2_P04",
+        "B_XU2_P06",
+        "B_XU2_P08",
+        "B_XU2_P10",
+        "B_XU2_P12",
+        "B_XU2_P14",
+        "B_XU2_P16",
+        "B_XU2_P18",
+        "B_XU2_P19",
+        "B_XU2_P21",
+        "B_XU2_P23",
+        "B_XU2_P26",
+        "B_XU2_P28",
+        "B_XU2_P30",
+        "B_XU2_P32",
+        "B_XU2_P34",
+        "B_XU2_P36"
+    ]
 }

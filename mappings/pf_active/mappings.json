@@ -2,5 +2,131 @@
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0
+    },
+    "coil/Shape_of" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(PF_COILS) }}"
+    },
+    "coil/#/name" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ PF_NAME }}"
+    },
+    "coil/#/identifier" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "PF_COIL_{{ indices.0 }}"
+    },
+    "coil/#/current" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/AMC/ROGEXT/{{ PF_NAME }}"
+        },
+        "SCALE": "{{ UNIT_SF }}"
+    },
+    "coil/#/function/type" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ FUNCTION }}"
+    },
+    "coil/#/element/Shape_of" : {
+        "MAP_TYPE": "DIMENSION",
+        "DIM_PROBE": "coil/#/element/#/geometry/rectangle/z"
+    },
+    "coil/#/element/#/geometry/geometry_type": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },       
+    "coil/#/element/#/geometry/rectangle/width": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
+            "key": "geom_elements.dR"
+        }
+    },
+    "coil/#/element/#/geometry/rectangle/height": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
+            "key": "geom_elements.dZ"
+        }
+    },
+    "coil/#/element/#/geometry/rectangle/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
+            "key": "geom_elements.centreR"
+        }
+    },
+    "coil/#/element/#/geometry/rectangle/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
+            "key": "geom_elements.centreZ"
+        }
+    },
+    "coil/#/element/#/area": {
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+            "WIDTH": "coil/#/element/#/geometry/rectangle/width",
+            "HEIGHT": "coil/#/element/#/geometry/rectangle/height"
+        },
+        "EXPR": "WIDTH*HEIGHT"
+    },
+    "circuit/Shape_of" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ NUM_SUPPLY }}"
+    },
+    "circuit/#/name" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CIRCUIT_{{ PF_PS_NAME }}"
+    },
+    "circuit/#/identifier" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CIRCUIT_{{ indices.0 }}"
+    },
+    "circuit/#/current" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XCM/{{ SUPPLY_CURRENT_NAME }}"
+        },
+        "SCALE": "{{ UNIT_SF }}"
+    },
+    "circuit/#/voltage" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XCM/{{ SUPPLY_VOLTAGE_NAME }}"
+        }
+    },
+    "supply/Shape_of" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ NUM_SUPPLY }}"
+    },
+    "supply/#/name" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ PF_PS_NAME }}"
+    },
+    "supply/#/identifier" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "SUPPLY_{{ indices.0 }}"
+    },
+    "supply/#/current" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XCM/{{ SUPPLY_CURRENT_NAME }}"
+        },
+        "SCALE": "{{ UNIT_SF }}"
+    },
+    "supply/#/voltage" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XCM/{{ SUPPLY_VOLTAGE_NAME }}"
+        }
     }
 }

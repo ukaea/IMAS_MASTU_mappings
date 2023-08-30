@@ -1,8 +1,187 @@
 {
-    "Comment": "Add any variables in here that are needed by your mappings",
-    "Templating": "These can be used for substitution in the signal names",
-    "Hello": "World",
+    "NUM_SUPPLY": 13,
     "UNIT_SF": 1000,
-    "DEG2RAD": "0.01745329",
-    "COIL_NAMES": ["COIL_1", "COIL_2", "COIL_3"]
+    "PF_NAME": "{{ at(PF_COILS, indices.0).COIL_NAME }}",
+    "PF_GEOM_NAME": "{{ at(PF_COILS, indices.0).GEOM_NAME }}",
+    "PF_PS_NAME": "{{ at(PF_COILS, indices.0).PS_NAME }}",
+    "SUPPLY_CURRENT_NAME": "{{ (at(PF_COILS, indices.0).CV_SIGNALS).C }}",
+    "SUPPLY_VOLTAGE_NAME": "{{ (at(PF_COILS, indices.0).CV_SIGNALS).V }}",
+    "FUNCTION": "{{ at(PF_COILS, indices.0).TYPE }}",
+    "PF_COILS": [
+        {
+            "COIL_NAME": "D1U",
+            "TYPE": 1,
+            "GEOM_NAME": "d1_upper",
+            "PS_NAME": "D1PS",
+            "CV_SIGNALS": {"C": "D1/IOUT", "V": "D1/VOUT"}
+        },
+        {
+            "COIL_NAME": "D1L",
+            "TYPE": 1,
+            "GEOM_NAME": "d1_lower",
+            "PS_NAME": "D1PS",
+            "CV_SIGNALS": {"C": "D1/IOUT", "V": "D1/VOUT"}
+        },
+        {
+            "COIL_NAME": "D2U",
+            "TYPE": 1,
+            "GEOM_NAME": "d2_upper",
+            "PS_NAME": "D2PS",
+            "CV_SIGNALS": {"C": "D2/IOUT", "V": "D2/VOUT"}
+        },
+        {
+            "COIL_NAME": "D2L",
+            "TYPE": 1,
+            "GEOM_NAME": "d2_lower",
+            "PS_NAME": "D2PS",
+            "CV_SIGNALS": {"C": "D2/IOUT", "V": "D2/VOUT"}
+        },
+        {
+            "COIL_NAME": "D3U",
+            "TYPE": 1,
+            "GEOM_NAME": "d3_upper",
+            "PS_NAME": "D3PS",
+            "CV_SIGNALS": {"C": "D3/IOUT", "V": "D3/VOUT"}
+        },
+        {
+            "COIL_NAME": "D3L",
+            "TYPE": 1,
+            "GEOM_NAME": "d3_lower",
+            "PS_NAME": "D3PS",
+            "CV_SIGNALS": {"C": "D3/IOUT", "V": "D3/VOUT"}
+        },
+        {
+            "COIL_NAME": "DPU",
+            "TYPE": 1,
+            "GEOM_NAME": "dp_upper",
+            "PS_NAME": "DPPS",
+            "CV_SIGNALS": {"C": "DP/IOUT", "V": "DP/VOUT"}
+        },
+        {
+            "COIL_NAME": "DPL",
+            "TYPE": 1,
+            "GEOM_NAME": "dp_lower",
+            "PS_NAME": "DPPS",
+            "CV_SIGNALS": {"C": "DP/IOUT", "V": "DP/VOUT"}
+        },
+        {
+            "COIL_NAME": "D5U",
+            "TYPE": 1,
+            "GEOM_NAME": "d5_upper",
+            "PS_NAME": "D5PS",
+            "CV_SIGNALS": {"C": "D5/IOUT", "V": "D5/VOUT"}
+        },
+        {
+            "COIL_NAME": "D5L",
+            "TYPE": 1,
+            "GEOM_NAME": "d5_lower",
+            "PS_NAME": "D5PS",
+            "CV_SIGNALS": {"C": "D5/IOUT", "V": "D5/VOUT"}
+        },
+        {
+            "COIL_NAME": "D6U",
+            "TYPE": 1,
+            "GEOM_NAME": "d6_upper",
+            "PS_NAME": "D6PS",
+            "CV_SIGNALS": {"C": "D6/IOUT", "V": "D6/VOUT"}
+        },
+        {
+            "COIL_NAME": "D6L",
+            "TYPE": 1,
+            "GEOM_NAME": "d6_lower",
+            "PS_NAME": "D6PS",
+            "CV_SIGNALS": {"C": "D6/IOUT", "V": "D6/VOUT"}
+        },
+        {
+            "COIL_NAME": "D7U",
+            "TYPE": 1,
+            "GEOM_NAME": "d7_upper",
+            "PS_NAME": "D7PS",
+            "CV_SIGNALS": {"C": "D7/IOUT", "V": "D7/VOUT"}
+        },
+        {
+            "COIL_NAME": "D7L",
+            "TYPE": 1,
+            "GEOM_NAME": "d7_lower",
+            "PS_NAME": "D7PS",
+            "CV_SIGNALS": {"C": "D7/IOUT", "V": "D7/VOUT"}
+        },
+        {
+            "COIL_NAME": "P1",
+            "TYPE": 0,
+            "GEOM_NAME": "p1_inner",
+            "PS_NAME": "P1PS",
+            "CV_SIGNALS": {"C": "P1PS/CURRENT", "V": "P1PS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "P1",
+            "TYPE": 0,
+            "GEOM_NAME": "p1_outer",
+            "PS_NAME": "P1PS",
+            "CV_SIGNALS": {"C": "P1PS/CURRENT", "V": "P1PS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "PC",
+            "TYPE": 1,
+            "GEOM_NAME": "pc",
+            "PS_NAME": "EFPS",
+            "CV_SIGNALS": {"C": "EFPS/CURRENT", "V": "EFPS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "PXU",
+            "TYPE": 1,
+            "GEOM_NAME": "px_upper",
+            "PS_NAME": "PXPS",
+            "CV_SIGNALS": {"C": "PX/IOUT", "V": "PX/VOUT"}
+        },
+        {
+            "COIL_NAME": "PXL",
+            "TYPE": 1,
+            "GEOM_NAME": "px_lower",
+            "PS_NAME": "PXPS",
+            "CV_SIGNALS": {"C": "PX/IOUT", "V": "PX/VOUT"}
+        },
+        {
+            "COIL_NAME": "P4U",
+            "TYPE": 1,
+            "GEOM_NAME": "p4_upper",
+            "PS_NAME": "SFPS",
+            "CV_SIGNALS": {"C": "SFPS/CURRENT", "V": "SFPS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "P4L",
+            "TYPE": 1,
+            "GEOM_NAME": "p4_lower",
+            "PS_NAME": "SFPS",
+            "CV_SIGNALS": {"C": "SFPS/CURRENT", "V": "SFPS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "P5U",
+            "TYPE": 1,
+            "GEOM_NAME": "p5_upper",
+            "PS_NAME": "MFPS",
+            "CV_SIGNALS": {"C": "MFPS/CURRENT", "V": "MFPS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "P5L",
+            "TYPE": 1,
+            "GEOM_NAME": "p5_lower",
+            "PS_NAME": "MFPS",
+            "CV_SIGNALS": {"C": "MFPS/CURRENT", "V": "MFPS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "P6U",
+            "TYPE": 2,
+            "GEOM_NAME": "p6_upper",
+            "PS_NAME": "RFPS",
+            "CV_SIGNALS": {"C": "RFPS/CURRENT", "V": "RFPS/VOLTAGE"}
+        },
+        {
+            "COIL_NAME": "P6L",
+            "TYPE": 2,
+            "GEOM_NAME": "p6_lower",
+            "PS_NAME": "RFPS",
+            "CV_SIGNALS": {"C": "RFPS/CURRENT", "V": "RFPS/VOLTAGE"}
+        }
+    ]
 }

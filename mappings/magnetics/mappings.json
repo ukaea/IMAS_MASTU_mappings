@@ -2,5 +2,183 @@
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0
+    },
+    "flux_loop": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(FLUX_LOOPS) }}"
+    },
+    "flux_loop[#]/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ FL_NAME }}"
+    },
+    "flux_loop[#]/identifier": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "FLUX_LOOP_{{ indices.0 }}"
+    },
+    "flux_loop[#]/type/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ FL_TYPE }}"
+    },
+    "flux_loop[#]/type/index": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ at(FL_TYPE_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}"
+    },
+    "flux_loop[#]/position": {
+        "MAP_TYPE": "DIMENSION",
+        "DIM_PROBE": "flux_loop[#]/position[#]/r"
+    },
+    "flux_loop[#]/position[#]/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.r",
+            "key": "{{ FL_NAME }}"
+        }
+    },
+    "flux_loop[#]/position[#]/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.z",
+            "key": "{{ FL_NAME }}"
+        }
+    },
+    "flux_loop[#]/flux": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/AMB/{{ FL_TYPE }}/{{ FL_NAME }}"
+        }
+    },
+    "flux_loop[#]/voltage": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/AMB/LOOPV/{{ LOOPV_NAME }}"
+        }
+    },
+    "ip": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "ip[#]": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/AMC/PLASMA_CURRENT"
+        },
+        "SCALE": 1000
+    },
+    "ip[#]/method_name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "IP Rogowski measurement"
+    },
+    "b_field_pol_probe": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(BPOL_PROBES) }}"
+    },
+    "b_field_pol_probe[#]/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ BPOL_NAME }}"
+    },
+    "b_field_pol_probe[#]/type/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "mirnov"
+    },
+    "b_field_pol_probe[#]/type/index": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },
+    "b_field_pol_probe[#]/type/description": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Mirnov Probe"
+    },
+    "b_field_pol_probe[#]/position/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "coordinate.r"
+        }
+    },
+    "b_field_pol_probe[#]/position/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "coordinate.z"
+        }
+    },
+    "b_field_pol_probe[#]/position/phi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "coordinate.phi"
+        },
+        "SCALE": "{{ DEG2RAD }}"
+    },
+    "b_field_pol_probe[#]/area": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "geometry.areaAve"
+        }
+    },
+    "b_field_pol_probe[#]/length": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "geometry.length"
+        }
+    },
+    "b_field_pol_probe[#]/turns": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "geometry.nturnsTotal"
+        }
+    },
+    "b_field_pol_probe[#]/field": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/AMB/PICKUP/{{ BPOL_NAME }}"
+        }
+    },
+    "b_field_pol_probe[#]/poloidal_angle": {
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+            "Z": "_temp/pickup[#]/unit_vector/z",
+            "R": "_temp/pickup[#]/unit_vector/r"
+        },
+        "EXPR": "2*pi-atan2(Z/R)"
+    },
+    "b_field_pol_probe[#]/toroidal_angle": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "orientation.unit_vector.phi"
+        }
+    },
+    "_temp/pickup[#]/unit_vector/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "orientation.unit_vector.r"
+        }
+    },
+    "_temp/pickup[#]/unit_vector/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOM",
+        "ARGS": {
+            "signal": "{{ BPOL_NAME }}",
+            "key": "orientation.unit_vector.z"
+        }
     }
 }
