@@ -28,13 +28,7 @@
     },
     "channel[#]/active_spatial_resolution[#]/geometric_coefficients": {
         "MAP_TYPE": "CUSTOM",
-        "NAME": "MASTU",
-        "FUNCTION": "A_COEFFICIENTS"
-    },
-    "channel[#]/polarisation_angle": {
-        "MAP_TYPE": "SLICE",
-        "SIGNAL": "_polarisation_angle",
-        "SLICE_INDEX": ["{{ indices.0 }}"]
+        "CUSTOM_TYPE": "A_COEFFICIENTS"
     },
     "_polarisation_angle": {
         "MAP_TYPE": "PLUGIN",

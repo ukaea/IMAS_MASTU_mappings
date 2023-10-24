@@ -165,7 +165,7 @@
             "Z": "_temp/pickup[#]/unit_vector/z",
             "R": "_temp/pickup[#]/unit_vector/r"
         },
-        "EXPR": "2*pi-atan2(Z/R)"
+        "EXPR": "2*PI-atan2(Z,R)"
     },
     "b_field_pol_probe[#]/toroidal_angle": {
         "MAP_TYPE": "PLUGIN",

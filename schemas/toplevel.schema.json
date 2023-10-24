@@ -18,7 +18,6 @@
                 { "$ref": "#/$defs/VALUE" },
                 { "$ref": "#/$defs/PLUGIN" },
                 { "$ref": "#/$defs/EXPR" },
-                { "$ref": "#/$defs/SLICE" },
                 { "$ref": "#/$defs/DIMENSION" },
                 { "$ref": "#/$defs/CUSTOM" }
             ]
@@ -29,7 +28,8 @@
         "DIMENSION": {
             "properties": {
                 "MAP_TYPE": { "const": "DIMENSION" },
-                "DIM_PROBE": { "type": "string" }
+                "DIM_PROBE": { "type": "string" },
+                "COMMENT": { "type": "string" }
             },
             "required": [
                         "MAP_TYPE",
@@ -40,7 +40,8 @@
         "VALUE": {
             "properties": {
                 "MAP_TYPE": { "const": "VALUE" },
-                "VALUE": { "type": ["number", "string", "array", "object"] }
+                "VALUE": { "type": ["number", "string", "array", "object"] },
+                "COMMENT": { "type": "string" }
             },
             "required": [
                         "MAP_TYPE",
@@ -59,32 +60,23 @@
                         }
                     }
                 },
+                "FLAGS": {
+                    "type": "array",
+                    "items" : {
+                        "type": "string"
+                    }
+                },
                 "PLUGIN": { "type": "string"  },
                 "OFFSET": { "type": ["string", "number"] },
-                "SCALE": { "type": ["string", "number"] }
+                "SCALE": { "type": ["string", "number"] },
+                "SLICE": { "type": "string" },
+                "FUNCTION": { "type": "string" },
+                "COMMENT": { "type": "string" }
             },
             "required": [
                         "MAP_TYPE",
                         "ARGS",
                         "PLUGIN"
-            ],
-            "additionalProperties": false
-        },
-        "SLICE": {
-            "properties": {
-                "MAP_TYPE": { "const": "SLICE" },
-                "SLICE_INDEX": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "SIGNAL": { "type": "string" }
-            },
-            "required": [
-                        "MAP_TYPE",
-                        "SLICE_INDEX",
-                        "SIGNAL"
             ],
             "additionalProperties": false
         },
@@ -100,7 +92,8 @@
                     }
 
                 },
-                "EXPR": { "type": "string" }
+                "EXPR": { "type": "string" },
+                "COMMENT": { "type": "string" }
             },
             "required": [
                             "MAP_TYPE",
@@ -111,13 +104,15 @@
         },
         "CUSTOM": {
             "properties": {
-                "MAP_TYPE": { "const": "CUSTOM" }
+                "MAP_TYPE": { "const": "CUSTOM" },
+                "CUSTOM_TYPE": { "type": "string" },
+                "COMMENT": { "type": "string" }
             },
             "required": [
                             "MAP_TYPE",
                             "CUSTOM_TYPE"
             ],
-            "additionalProperties": true
+            "additionalProperties": false
         }
     }
 }

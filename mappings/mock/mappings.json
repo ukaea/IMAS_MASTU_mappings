@@ -4,23 +4,27 @@
         "VALUE": 3.5
     },
     "example2/test": {
-        "MAP_TYPE": "MAP",
-        "KEY": "mock/MASTU/example-2",
-        "PLUGIN": "GEOMETRY"
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOMETRY",
+        "ARGS": {
+            "signal": "mock/MASTU/example-2"
+        }
     },
     "example3/test": {
-        "MAP_TYPE": "OFFSET",
-        "KEY": "mock/MASTU/example-3",
-        "VAR": "test",
+        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOMETRY",
+        "ARGS": {
+            "signal": "mock/MASTU/example-3"
+        },
         "OFFSET": 2.5
     },
     "example4/test": {
-        "MAP_TYPE": "SCALE",
-        "KEY": "mock/MASTU/example-4",
-        "VAR": "test",
+        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "GEOMETRY",
-        "SCALAR": 3.2
+        "ARGS": {
+            "signal": "mock/MASTU/example-4"
+        },
+        "SCALE": 3.2
     },
     "example5/test": {
         "MAP_TYPE": "EXPR",
@@ -31,8 +35,10 @@
         "EXPR": "WIDTH*HEIGHT*PI"
     },
     "_tempexample1/test": {
-        "MAP_TYPE": "MAP",
-        "KEY": "mock/MASTU/temp-example-1",
-        "PLUGIN": "GEOMETRY"
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "GEOMETRY",
+        "ARGS": {
+            "signal": "mock/MASTU/temp-example-1"
+        }
     }
 }
