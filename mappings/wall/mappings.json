@@ -3,7 +3,7 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 2
     },
-    "description_2d/Shape_of": {
+    "description_2d": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
@@ -19,7 +19,7 @@
         "MAP_TYPE": "VALUE",
         "VALUE": "A limiting surface for EFIT++"
     },
-    "description_2d[#]/limiter/unit/Shape_of": {
+    "description_2d[#]/limiter/unit": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
@@ -29,7 +29,7 @@
     },
     "description_2d[#]/limiter/unit[#]/outline/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/limiter/efit",
             "key": "R"
@@ -37,7 +37,7 @@
     },
     "description_2d[#]/limiter/unit[#]/outline/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/limiter/efit",
             "key": "Z"

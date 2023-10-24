@@ -25,23 +25,33 @@
     },
     "flux_loop[#]/position": {
         "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "flux_loop[#]/position[#]/r"
+        "DIM_PROBE": "_flux_loop[#]/position_size"
+    },
+    "_flux_loop[#]/position_size": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "{{ FL_NAME }}",
+            "key": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.r"
+        }
     },
     "flux_loop[#]/position[#]/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
-            "signal": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.r",
-            "key": "{{ FL_NAME }}"
-        }
+            "signal": "{{ FL_NAME }}",
+            "key": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.r"
+        },
+        "SLICE": "[{{ indices.1 }}]"
     },
     "flux_loop[#]/position[#]/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
-            "signal": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.z",
-            "key": "{{ FL_NAME }}"
-        }
+            "signal": "{{ FL_NAME }}",
+            "key": "{{ at(FL_POSITION_MAP, at(FLUX_LOOPS, indices.0).TYPE) }}.z"
+        },
+        "SLICE": "[{{ indices.1 }}]"
     },
     "flux_loop[#]/flux": {
         "MAP_TYPE": "PLUGIN",
@@ -95,7 +105,7 @@
     },
     "b_field_pol_probe[#]/position/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "coordinate.r"
@@ -103,7 +113,7 @@
     },
     "b_field_pol_probe[#]/position/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "coordinate.z"
@@ -111,7 +121,7 @@
     },
     "b_field_pol_probe[#]/position/phi": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "coordinate.phi"
@@ -120,7 +130,7 @@
     },
     "b_field_pol_probe[#]/area": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "geometry.areaAve"
@@ -128,7 +138,7 @@
     },
     "b_field_pol_probe[#]/length": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "geometry.length"
@@ -136,7 +146,7 @@
     },
     "b_field_pol_probe[#]/turns": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "geometry.nturnsTotal"
@@ -159,7 +169,7 @@
     },
     "b_field_pol_probe[#]/toroidal_angle": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "orientation.unit_vector.phi"
@@ -167,7 +177,7 @@
     },
     "_temp/pickup[#]/unit_vector/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "orientation.unit_vector.r"
@@ -175,7 +185,7 @@
     },
     "_temp/pickup[#]/unit_vector/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "{{ BPOL_NAME }}",
             "key": "orientation.unit_vector.z"

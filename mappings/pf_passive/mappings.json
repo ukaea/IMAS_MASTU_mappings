@@ -3,13 +3,21 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 0
     },
-    "loop/Shape_of": {
+    "loop": {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ length(LOOPS) }}"
     },
+    "loop[#]/name": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "name"
+        }
+    },
     "loop[#]/resistance": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "resistance"
@@ -17,7 +25,7 @@
     },
     "loop[#]/resistivity": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "resistivity"
@@ -31,9 +39,24 @@
         },
         "SCALE": "{{ UNIT_SF }}"
     },
-    "loop[#]/element/Shape_of": {
+    "loop[#]/time": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "{{ PASSIVE_CURRENT }}"
+        }
+    },
+    "loop[#]/element": {
         "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "loop[#]/element[#]/geometry/oblique/r"
+        "DIM_PROBE": "_loop[#]/element[#]/n_elements"
+    },
+    "_loop[#]/element[#]/n_elements": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "centreR"
+        }
     },
     "loop[#]/element[#]/name": {
         "MAP_TYPE": "VALUE",
@@ -41,94 +64,138 @@
     },
     "loop[#]/element[#]/identifier": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "LOOP_ELEM_{{ indices.0 }}"
-    },
-    "loop[#]/element[#]/area": {
-        "MAP_TYPE": "EXPR",
-        "PARAMETERS": {
-            "dR": "_dR",
-            "dZ": "_dZ"
-        },
-        "EXPR": "dR*dZ"
+        "VALUE": "{{ PASSIVE_NAME }}_{{ indices.0 }}_{{ indices.1 }}"
     },
     "loop[#]/element[#]/geometry/geometry_type": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 3
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "geometry_type",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
+    },
+    "loop[#]/element[#]/geometry/rectangle/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "rectangle.centreR",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
+    },
+    "loop[#]/element[#]/geometry/rectangle/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "rectangle.centreZ",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
+    },
+    "loop[#]/element[#]/geometry/rectangle/width": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "rectangle.dR",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
+    },
+    "loop[#]/element[#]/geometry/rectangle/height": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "rectangle.dZ",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
     },
     "loop[#]/element[#]/geometry/oblique/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "centreR"
-        }
+            "key": "oblique.centreR",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
     },
     "loop[#]/element[#]/geometry/oblique/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "centreZ"
-        }
+            "key": "oblique.centreZ",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
+    },
+    "loop[#]/element[#]/geometry/oblique/length_alpha": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "oblique.dR",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
+    },
+    "loop[#]/element[#]/geometry/oblique/length_beta": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
+            "key": "oblique.dZ",
+            "element": "{{ indices.1 }}"
+        },
+        "FLAGS": [
+            "custom_passive"
+        ]
     },
     "loop[#]/element[#]/geometry/oblique/alpha": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "shapeAngle1"
+            "key": "oblique.shapeAngle1",
+            "element": "{{ indices.1 }}"
         },
-        "SCALE": "{{ DEG2RAD }}"
+        "FLAGS": [
+            "custom_passive"
+        ]
     },
     "loop[#]/element[#]/geometry/oblique/beta": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "shapeAngle2"
+            "key": "oblique.shapeAngle2",
+            "element": "{{ indices.1 }}"
         },
-        "OFFSET": 90
-    },
-    "loop[#]/element[#]/geometry/oblique/length_alpha": {
-        "MAP_TYPE": "EXPR",
-        "PARAMETERS": {
-            "dR": "_dR",
-            "a": "loop[#]/element[#]/geometry/oblique/alpha"
-        },
-        "EXPR": "dR / cos(a)"
-    },
-    "loop[#]/element[#]/geometry/oblique/length_beta": {
-        "MAP_TYPE": "EXPR",
-        "PARAMETERS": {
-            "dZ": "_dZ",
-            "b": "loop[#]/element[#]/geometry/oblique/beta"
-        },
-        "EXPR": "dZ / cos(b)"
-    },
-    "_dR": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
-        "ARGS": {
-            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "dR"
-        }
-    },
-    "_dZ": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
-        "ARGS": {
-            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "dZ"
-        }
-    },
-    "_shapeAngle2": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
-        "ARGS": {
-            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "shapeAngle2"
-        },
-        "SCALE": -1.0
+        "FLAGS": [
+            "custom_passive"
+        ]
     }
-
 }

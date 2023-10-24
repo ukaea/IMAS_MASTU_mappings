@@ -1,40 +1,47 @@
 {
     "DEG2RAD": 0.0174532925199,
     "UNIT_SF": 1000,
+    "PLUGIN_ARGS": {
+        "DRAFT_JSON": {
+            "source": "{{ shot }}"
+        },
+        "UDA": {
+            "source": "{{ shot }}",
+            "host": "uda2.hpc.l",
+            "port": "56565"
+        },
+        "TEMP_GEOM": {
+            "source": "{{ shot }}",
+            "host": "uda2.hpc.l",
+            "port": "56565"
+        }
+    },
     "PASSIVE_NAME": "{{ at(LOOPS, indices.0).NAME }}",
     "PASSIVE_CURRENT": "{{ at(LOOPS, indices.0).CURRENT }}",
     "LOOPS": [
         {
-            "NAME": "centrecolumn",
-            "CURRENT": ""
+            "NAME": "centrecolumn"
         },
         {
-            "NAME": "centrecolumn_tiles",
-            "CURRENT": ""
+            "NAME": "centrecolumn_tiles"
         },
         {
-            "NAME": "colosseum_lower",
-            "CURRENT": ""
+            "NAME": "colosseum_lower"
         },
         {
-            "NAME": "colosseum_outer_lower",
-            "CURRENT": ""
+            "NAME": "colosseum_outer_lower"
         },
         {
-            "NAME": "colosseum_outer_upper",
-            "CURRENT": ""
+            "NAME": "colosseum_outer_upper"
         },
         {
-            "NAME": "colosseum_upper",
-            "CURRENT": ""
+            "NAME": "colosseum_upper"
         },
         {
-            "NAME": "cryopump_lower",
-            "CURRENT": ""
+            "NAME": "cryopump_lower"
         },
         {
-            "NAME": "cryopump_upper",
-            "CURRENT": ""
+            "NAME": "cryopump_upper"
         },
         {
             "NAME": "d1_case_lower",
@@ -45,12 +52,10 @@
             "CURRENT": "/AMC/CASECURR/D1U"
         },
         {
-            "NAME": "d1_support_lower",
-            "CURRENT": ""
+            "NAME": "d1_support_lower"
         },
         {
-            "NAME": "d1_support_upper",
-            "CURRENT": ""
+            "NAME": "d1_support_upper"
         },
         {
             "NAME": "d2_case_lower",
@@ -93,12 +98,10 @@
             "CURRENT": "/AMC/CASECURR/D7U"
         },
         {
-            "NAME": "div_tiles_lower",
-            "CURRENT": ""
+            "NAME": "div_tiles_lower"
         },
         {
-            "NAME": "div_tiles_upper",
-            "CURRENT": ""
+            "NAME": "div_tiles_upper"
         },
         {
             "NAME": "dp_case_lower",
@@ -109,20 +112,16 @@
             "CURRENT": "/AMC/CASECURR/DPU"
         },
         {
-            "NAME": "gas_baffle_lower",
-            "CURRENT": ""
+            "NAME": "gas_baffle_lower"
         },
         {
-            "NAME": "gas_baffle_upper",
-            "CURRENT": ""
+            "NAME": "gas_baffle_upper"
         },
         {
-            "NAME": "nose_baffle_tiles_lower",
-            "CURRENT": ""
+            "NAME": "nose_baffle_tiles_lower"
         },
         {
-            "NAME": "nose_baffle_tiles_upper",
-            "CURRENT": ""
+            "NAME": "nose_baffle_tiles_upper"
         },
         {
             "NAME": "p4_case_lower",
@@ -149,40 +148,31 @@
             "CURRENT": "/AMC/CASECURR/P6U"
         },
         {
-            "NAME": "psp_lower",
-            "CURRENT": ""
+            "NAME": "psp_lower"
         },
         {
-            "NAME": "psp_upper",
-            "CURRENT": ""
+            "NAME": "psp_upper"
         },
         {
-            "NAME": "ring_plate_major_lower",
-            "CURRENT": ""
+            "NAME": "ring_plate_major_lower"
         },
         {
-            "NAME": "ring_plate_major_upper",
-            "CURRENT": ""
+            "NAME": "ring_plate_major_upper"
         },
         {
-            "NAME": "ring_plate_minor_lower",
-            "CURRENT": ""
+            "NAME": "ring_plate_minor_lower"
         },
         {
-            "NAME": "ring_plate_minor_upper",
-            "CURRENT": ""
+            "NAME": "ring_plate_minor_upper"
         },
         {
-            "NAME": "triangle_lower",
-            "CURRENT": ""
+            "NAME": "triangle_lower"
         },
         {
-            "NAME": "triangle_upper",
-            "CURRENT": ""
+            "NAME": "triangle_upper"
         },
         {
-            "NAME": "vessel",
-            "CURRENT": ""
+            "NAME": "vessel"
         }
     ]
 }

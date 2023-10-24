@@ -8,6 +8,21 @@
     "LOOPV_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOPV }}",
     "BPOL_NAME": "{{ at(BPOL_PROBES, indices.0) }}",
     "FL_POSITION_MAP": {"FLUX": "coordinate", "SADDLE": "coilPath"},
+    "PLUGIN_ARGS": {
+        "DRAFT_JSON": {
+            "source": "{{ shot }}"
+        },
+        "UDA": {
+            "source": "{{ shot }}",
+            "host": "uda2.hpc.l",
+            "port": "56565"
+        },
+        "TEMP_GEOM": {
+            "source": "{{ shot }}",
+            "host": "uda2.hpc.l",
+            "port": "56565"
+        }
+    },
     "FLUX_LOOPS": [
         {
             "TYPE": "FLUX",
@@ -519,460 +534,369 @@
             "LOOP_NAME": "F_XU_07",
             "LOOPV": "LV_XU_07"
         },
-        {
+                {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_030A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_030A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_030B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_030B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_090A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_090A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_090B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_090B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_150A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_150A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_150B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_150B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_210A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_210A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_210B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_210B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_270A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_270A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_270B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_270B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_330A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_330A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCL_330B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCL_330B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_030A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_030A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_030B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_030B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_090A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_090A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_090B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_090B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_150A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_150A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_150B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_150B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_210A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_210A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_210B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_210B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_270A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_270A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_270B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_270B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_330A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_330A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_CCU_330B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_CCU_330B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_007_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_007_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_022_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_022_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_037_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_037_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_052_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_052_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_067_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_067_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_082_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_082_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_097_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_097_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_112_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_112_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_127_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_127_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_142_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_142_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_157_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_157_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_172_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_172_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_187_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_187_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_202_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_202_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_217_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_217_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_232_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_232_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_247_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_247_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_262_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_262_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_277_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_277_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_292_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_292_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_307_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_307_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_322_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_322_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_337_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_337_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NL_352_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NL_352_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_007_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_007_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_022_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_022_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_037_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_037_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_052_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_052_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_067_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_067_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_082_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_082_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_097_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_097_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_112_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_112_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_127_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_127_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_142_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_142_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_157_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_157_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_172_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_172_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_187_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_187_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_202_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_202_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_217_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_217_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_232_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_232_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_247_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_247_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_262_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_262_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_277_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_277_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_292_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_292_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_307_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_307_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_322_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_322_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_337_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_337_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_NU_352_5",
-            "LOOPV": ""
+            "LOOP_NAME": "S_NU_352_5"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_015A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_015A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_015B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_015B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_045A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_045A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_075A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_075A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_075B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_075B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_105A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_105A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_105B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_105B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_135A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_135A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_135B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_135B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_165A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_165A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_165B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_165B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_195A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_195A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_195B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_195B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_225A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_225A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_255A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_255A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_255B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_255B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_285A",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_285A"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_315B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_315B"
         },
         {
             "TYPE": "SADDLE",
-            "LOOP_NAME": "S_O_345B",
-            "LOOPV": ""
+            "LOOP_NAME": "S_O_345B"
         }
     ],
     "BPOL_PROBES": [

@@ -3,7 +3,7 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 0
     },
-    "coil/Shape_of" : {
+    "coil" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ length(PF_COILS) }}"
     },
@@ -23,13 +23,25 @@
         },
         "SCALE": "{{ UNIT_SF }}"
     },
-    "coil[#]/function/type" : {
+    "coil[#]/function" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "coil[#]/function[#]/index" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ FUNCTION }}"
     },
-    "coil[#]/element/Shape_of" : {
+    "coil[#]/element" : {
         "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "coil[#]/element[#]/geometry/rectangle/z"
+        "DIM_PROBE": "_coil[#]/element[#]/geometry/rectangle/size"
+    },
+    "_coil[#]/element[#]/geometry/rectangle/size": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "TEMP_GEOM",
+        "ARGS": {
+            "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
+            "key": "geom_elements.dR"
+        }
     },
     "coil[#]/element[#]/geometry/geometry_type": {
         "MAP_TYPE": "VALUE",
@@ -37,35 +49,39 @@
     },       
     "coil[#]/element[#]/geometry/rectangle/width": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dR"
-        }
+        },
+        "SLICE": "[{{ indices.1 }}]"
     },
     "coil[#]/element[#]/geometry/rectangle/height": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dZ"
-        }
+        },
+        "SLICE": "[{{ indices.1 }}]"
     },
     "coil[#]/element[#]/geometry/rectangle/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.centreR"
-        }
+        },
+        "SLICE": "[{{ indices.1 }}]"
     },
     "coil[#]/element[#]/geometry/rectangle/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOM",
+        "PLUGIN": "TEMP_GEOM",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.centreZ"
-        }
+        },
+        "SLICE": "[{{ indices.1 }}]"
     },
     "coil[#]/element[#]/area": {
         "MAP_TYPE": "EXPR",
@@ -75,7 +91,7 @@
         },
         "EXPR": "WIDTH*HEIGHT"
     },
-    "circuit/Shape_of" : {
+    "circuit" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ NUM_SUPPLY }}"
     },
@@ -102,7 +118,12 @@
             "signal": "/XCM/{{ SUPPLY_VOLTAGE_NAME }}"
         }
     },
-    "supply/Shape_of" : {
+    "_circuit[#]/connections" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0,
+        "COMMENT": "TO BE ADDED"
+    },
+    "supply" : {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ NUM_SUPPLY }}"
     },
