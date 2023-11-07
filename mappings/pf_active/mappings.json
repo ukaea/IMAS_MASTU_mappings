@@ -3,31 +3,39 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 0
     },
-    "coil" : {
+    "coil": {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ length(PF_COILS) }}"
     },
-    "coil[#]/name" : {
+    "coil[#]/name": {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ PF_NAME }}"
     },
     "coil[#]/identifier" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "PF_COIL_{{ indices.0 }}"
+        "VALUE": "PF_COIL_{{ indices.0 + 1 }}"
     },
     "coil[#]/current" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "CUSTOM_MASTU",
+        "ARGS": {
+            "signal": "/AMC/ROGEXT/{{ PF_NAME }}"
+        },
+        "FUNCTION": "pf_coil_current",
+        "SCALE": "{{ UNIT_SF }}"
+    },
+    "coil[#]/current/time": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/AMC/ROGEXT/{{ PF_NAME }}"
-        },
-        "SCALE": "{{ UNIT_SF }}"
+        }
     },
-    "coil[#]/function" : {
+    "coil[#]/function": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
-    "coil[#]/function[#]/index" : {
+    "coil[#]/function[#]/index": {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ FUNCTION }}"
     },
@@ -93,7 +101,7 @@
     },
     "circuit" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ NUM_SUPPLY }}"
+        "VALUE": "{{ length(PF_SUPPLIES) }}"
     },
     "circuit[#]/name" : {
         "MAP_TYPE": "VALUE",
@@ -101,31 +109,19 @@
     },
     "circuit[#]/identifier" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "CIRCUIT_{{ indices.0 }}"
+        "VALUE": "CIRCUIT_{{ indices.0 + 1 }}"
     },
-    "circuit[#]/current" : {
+    "circuit[#]/connections" : {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
+        "PLUGIN": "CUSTOM_MASTU",
         "ARGS": {
-            "signal": "/XCM/{{ SUPPLY_CURRENT_NAME }}"
+            "ps_name": "{{ PF_PS_NAME }}"
         },
-        "SCALE": "{{ UNIT_SF }}"
-    },
-    "circuit[#]/voltage" : {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
-            "signal": "/XCM/{{ SUPPLY_VOLTAGE_NAME }}"
-        }
-    },
-    "_circuit[#]/connections" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0,
-        "COMMENT": "TO BE ADDED"
+        "FUNCTION": "pf_conn_matrix"
     },
     "supply" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ NUM_SUPPLY }}"
+        "VALUE": "{{ length(PF_SUPPLIES) }}"
     },
     "supply[#]/name" : {
         "MAP_TYPE": "VALUE",
@@ -133,15 +129,14 @@
     },
     "supply[#]/identifier" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "SUPPLY_{{ indices.0 }}"
+        "VALUE": "SUPPLY_{{ indices.0 + 1 }}"
     },
     "supply[#]/current" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/XCM/{{ SUPPLY_CURRENT_NAME }}"
-        },
-        "SCALE": "{{ UNIT_SF }}"
+        }
     },
     "supply[#]/voltage" : {
         "MAP_TYPE": "PLUGIN",
