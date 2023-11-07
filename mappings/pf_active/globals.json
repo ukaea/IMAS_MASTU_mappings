@@ -157,68 +157,68 @@
     "PF_SUPPLIES": [
         {
             "PS_NAME": "D1PS",
-            "CURRENT": "D1/IOUT",
-            "VOLTAGE": "D1/VOUT"
+            "CURRENT": "/XCM/D1/IOUT",
+            "VOLTAGE": "/XCM/D1/VOUT"
         },
         {
             "PS_NAME": "D2PS",
-            "CURRENT": "D2/IOUT",
-            "VOLTAGE": "D2/VOUT"
+            "CURRENT": "/XCM/D2/IOUT",
+            "VOLTAGE": "/XCM/D2/VOUT"
         },
         {
             "PS_NAME": "D3PS",
-            "CURRENT": "D3/IOUT",
-            "VOLTAGE": "D3/VOUT"
+            "CURRENT": "/XCM/D3/IOUT",
+            "VOLTAGE": "/XCM/D3/VOUT"
         },
         {
             "PS_NAME": "DPPS",
-            "CURRENT": "DP/IOUT",
-            "VOLTAGE": "DP/VOUT"
+            "CURRENT": "/XCM/DP/IOUT",
+            "VOLTAGE": "/XCM/DP/VOUT"
         },
         {
             "PS_NAME": "D5PS",
-            "CURRENT": "D5/IOUT",
-            "VOLTAGE": "D5/VOUT"
+            "CURRENT": "/XCM/D5/IOUT",
+            "VOLTAGE": "/XCM/D5/VOUT"
         },
         {
             "PS_NAME": "D6PS",
-            "CURRENT": "D6/IOUT",
-            "VOLTAGE": "D6/VOUT"
+            "CURRENT": "/XCM/D6/IOUT",
+            "VOLTAGE": "/XCM/D6/VOUT"
         },
         {
             "PS_NAME": "D7PS",
-            "CURRENT": "D7/IOUT",
-            "VOLTAGE": "D7/VOUT"
+            "CURRENT": "/XCM/D7/IOUT",
+            "VOLTAGE": "/XCM/D7/VOUT"
         },
         {
             "PS_NAME": "P1PS",
-            "CURRENT": "P1PS/CURRENT",
-            "VOLTAGE": "P1PS/VOLTS"
+            "CURRENT": "/XCM/P1PS/CURRENT",
+            "VOLTAGE": "/XCM/P1PS/VOLTS"
         },
         {
             "PS_NAME": "EFPS",
-            "CURRENT": "EFPS/CURRENT",
-            "VOLTAGE": "EFPS/VOLTS"
+            "CURRENT": "/XCM/EFPS/CURRENT",
+            "VOLTAGE": "/XCM/EFPS/VOLTS"
         },
         {
             "PS_NAME": "PXPS",
-            "CURRENT": "PX/IOUT",
-            "VOLTAGE": "PX/VOUT"
+            "CURRENT": "/XCM/PX/IOUT",
+            "VOLTAGE": "/XCM/PX/VOUT"
         },
         {
             "PS_NAME": "SFPS",
-            "CURRENT": "SFPS/CURRENT",
-            "VOLTAGE": "SFPS/VOLTS"
+            "CURRENT": "/XCM/SFPS/CURRENT",
+            "VOLTAGE": "/XCM/SFPS/VOLTS"
         },
         {
             "PS_NAME": "MFPS",
-            "CURRENT": "MFPS/CURRENT",
-            "VOLTAGE": "MFPS/VOLTS"
+            "CURRENT": "/XCM/MFPS/CURRENT",
+            "VOLTAGE": "/XCM/MFPS/VOLTS"
         },
         {
             "PS_NAME": "RFPS",
-            "CURRENT": "RFPS/CURRENT",
-            "VOLTAGE": "RFPS/VOUT"
+            "CURRENT": "/XWS/RTP/PC/CALC/P6-I-ABS",
+            "VOLTAGE": "/XCM/RFPS/VOUT"
         }
     ]
 }

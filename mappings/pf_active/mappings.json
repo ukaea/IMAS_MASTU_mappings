@@ -135,14 +135,14 @@
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
-            "signal": "/XCM/{{ SUPPLY_CURRENT_NAME }}"
+            "signal": "{{ SUPPLY_CURRENT_NAME }}"
         }
     },
     "supply[#]/voltage" : {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
-            "signal": "/XCM/{{ SUPPLY_VOLTAGE_NAME }}"
+            "signal": "{{ SUPPLY_VOLTAGE_NAME }}"
         }
     }
 }
