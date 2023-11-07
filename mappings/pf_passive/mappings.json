@@ -64,7 +64,7 @@
     },
     "loop[#]/element[#]/identifier": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}_{{ indices.0 }}_{{ indices.1 }}"
+        "VALUE": "{{ PASSIVE_NAME }}_{{ indices.0 + 1 }}_{{ indices.1 + 1 }}"
     },
     "loop[#]/element[#]/geometry/geometry_type": {
         "MAP_TYPE": "PLUGIN",

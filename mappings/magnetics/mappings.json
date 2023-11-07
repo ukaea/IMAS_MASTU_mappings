@@ -13,7 +13,7 @@
     },
     "flux_loop[#]/identifier": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "FLUX_LOOP_{{ indices.0 }}"
+        "VALUE": "FLUX_LOOP_{{ indices.0 + 1 }}"
     },
     "flux_loop[#]/type/name": {
         "MAP_TYPE": "VALUE",
