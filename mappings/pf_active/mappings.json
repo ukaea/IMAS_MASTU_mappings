@@ -45,7 +45,7 @@
     },
     "_coil[#]/element[#]/geometry/rectangle/size": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dR"
@@ -57,7 +57,7 @@
     },       
     "coil[#]/element[#]/geometry/rectangle/width": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dR"
@@ -66,7 +66,7 @@
     },
     "coil[#]/element[#]/geometry/rectangle/height": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dZ"
@@ -75,7 +75,7 @@
     },
     "coil[#]/element[#]/geometry/rectangle/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.centreR"
@@ -84,7 +84,7 @@
     },
     "coil[#]/element[#]/geometry/rectangle/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.centreZ"

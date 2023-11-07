@@ -29,7 +29,7 @@
     },
     "description_2d[#]/limiter/unit[#]/outline/r": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/limiter/efit",
             "key": "R"
@@ -37,7 +37,7 @@
     },
     "description_2d[#]/limiter/unit[#]/outline/z": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "TEMP_GEOM",
+        "PLUGIN": "GEOMETRY",
         "ARGS": {
             "signal": "/limiter/efit",
             "key": "Z"

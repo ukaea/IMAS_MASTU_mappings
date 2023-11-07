@@ -10,7 +10,7 @@
             "host": "uda2.hpc.l",
             "port": "56565"
         },
-        "TEMP_GEOM": {
+        "GEOMETRY": {
             "source": "{{ shot }}",
             "host": "uda2.hpc.l",
             "port": "56565"
