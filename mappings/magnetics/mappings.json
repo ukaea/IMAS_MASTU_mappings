@@ -91,6 +91,10 @@
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ BPOL_NAME }}"
     },
+    "b_field_pol_probe[#]/identifier": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "BPOL_PROBE_{{ indices.0 + 1 }}"
+    },
     "b_field_pol_probe[#]/type/name": {
         "MAP_TYPE": "VALUE",
         "VALUE": "mirnov"
