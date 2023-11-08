@@ -61,11 +61,11 @@
     },
     "loop[#]/element[#]/name": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}_{{ indices.1 }}"
+        "VALUE": "{{ PASSIVE_NAME }}_E{{ indices.1 + 1}}"
     },
     "loop[#]/element[#]/identifier": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}_{{ indices.0 + 1 }}_{{ indices.1 + 1 }}"
+        "VALUE": "{{ PASSIVE_NAME }}_L{{ indices.0 + 1 }}_E{{ indices.1 + 1 }}"
     },
     "loop[#]/element[#]/geometry/geometry_type": {
         "MAP_TYPE": "PLUGIN",
@@ -99,7 +99,7 @@
     },
     "loop[#]/element[#]/geometry/rectangle/width": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "PLUGIN": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.dR",
