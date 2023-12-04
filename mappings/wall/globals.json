@@ -1,19 +1,3 @@
 {
-    "UNIT_SF": 1000,
-    "DEG2RAD": 0.0174532925199,
-    "PLUGIN_ARGS": {
-        "DRAFT_JSON": {
-            "source": "{{ shot }}"
-        },
-        "UDA": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        },
-        "GEOMETRY": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        }
-    }
+    "DESCRIPTION": "Global naming conventions and templating parameters for wall IDS"
 }

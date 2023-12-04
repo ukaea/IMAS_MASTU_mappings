@@ -1,26 +1,5 @@
 {
-    "UNIT_SF": 1000,
-    "DEG2RAD": 0.0174532925199,
-    "PLUGIN_ARGS": {
-        "DRAFT_JSON": {
-            "source": "{{ shot }}"
-        },
-        "UDA": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        },
-        "GEOMETRY": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        },
-        "CUSTOM_MASTU": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        }
-    },
+    "DESCRIPTION": "Global naming conventions and templating parameters for pf_active IDS",
     "PF_NAME": "{{ at(PF_COILS, indices.0).COIL_NAME }}",
     "PF_GEOM_NAME": "{{ at(PF_COILS, indices.0).GEOM_NAME }}",
     "FUNCTION": "{{ at(PF_COILS, indices.0).TYPE }}",

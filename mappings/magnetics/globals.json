@@ -1,28 +1,11 @@
 {
-    "Comment": "Add any variables in here that are needed by your mappings",
-    "Templating": "These can be used for substitution in the signal names",
-    "DEG2RAD": 0.0174532925199,
+    "DESCRIPTION": "Global naming conventions and templating parameters for magnetics IDS",
     "FL_TYPE_MAP": {"FLUX": 1, "SADDLE": 2},
     "FL_TYPE": "{{ at(FLUX_LOOPS, indices.0).TYPE }}",
     "FL_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOP_NAME }}",
     "LOOPV_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOPV }}",
     "BPOL_NAME": "{{ at(BPOL_PROBES, indices.0) }}",
     "FL_POSITION_MAP": {"FLUX": "coordinate", "SADDLE": "coilPath"},
-    "PLUGIN_ARGS": {
-        "DRAFT_JSON": {
-            "source": "{{ shot }}"
-        },
-        "UDA": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        },
-        "GEOMETRY": {
-            "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
-        }
-    },
     "FLUX_LOOPS": [
         {
             "TYPE": "FLUX",

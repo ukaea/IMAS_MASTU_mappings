@@ -1,4 +1,3 @@
 {
-    "DEG2RAD": 0.0174532925199,
-    "UNIF_SF": 1000
+    "DESCRIPTION": "Global naming conventions and templating parameters for pulse_schedule IDS"
 }
