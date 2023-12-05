@@ -2,5 +2,114 @@
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0
+    },
+    "flux_control/i_plasma/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/PLASMA/T/IP_REF"
+        },
+        "SCALE": "{{ UNIT_SF }}"
+    },
+    "flux_control/mode": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/PLASMA/T/OHMIC_BLENDER"
+        }
+    },
+    "flux_control/loop_voltage/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/PLASMA/T/VLOOP_REF"
+        }
+    },
+    "pf_active/coil": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(PF_SUPPLIES) }}"
+    },
+    "pf_active/coil[#]/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ SUPPLY_NAME }}"
+    },
+    "pf_active/coil[#]/identifier": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "COIL_{{ indices.0 + 1 }}"
+    },
+    "pf_active/coil[#]/current/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/CIRCUITS/T/{{ SUPPLY_NAME }}REF"
+        },
+        "COMMENT": "Not complete timebase"
+    },
+    "pf_active/supply": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(PF_SUPPLIES) }}"
+    },
+    "pf_active/supply[#]/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ SUPPLY_NAME }}"
+    },
+    "pf_active/supply[#]/identifier": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "SUPPLY_{{ indices.0 + 1 }}"
+    },
+    "pf_active/supply[#]/voltage/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/PF/F/{{ SUPPLY_NAME }}"
+        }
+    },
+    "density_control/n_e_line/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/FUELLING/T/DENSITY_REF_TARGET"
+        }
+    },
+    "position_control/x_point": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "position_control/x_point[#]/r/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/SHAPE/T/RX_REF"
+        }
+    },
+    "position_control/x_point[#]/z/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/SHAPE/T/ZX_REF"
+        }
+    },
+    "position_control/gap": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(GAP_R) }}"
+    },
+    "position_control/gap[#]/z": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0.0
+    },
+    "position_control/gap[#]/angle": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0.0
+    },
+    "position_control/gap[#]/r": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ at(GAP_R, indices.0) }}"
+    },
+    "position_control/gap[#]/value/reference": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/XDC/SHAPE/T/{{ at(GAP_R_REF, indices.0) }}"
+        }
     }
 }
