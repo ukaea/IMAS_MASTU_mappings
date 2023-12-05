@@ -2,7 +2,7 @@
     "COMMENT_1": "Top-level globals.json, relevant variables to all IDSs. Includes all templating substitutions",
     "COMMENT_2": "PLUGIN_ARGS defines the mandatory arguments for each plugin request",
     "DEG2RAD": 0.0174532925199,
-    "UNIF_SF": 1000,
+    "UNIT_SF": 1000,
     "PLUGIN_ARGS": {
         "DRAFT_JSON": {
             "source": "{{ shot }}"

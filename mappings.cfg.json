@@ -1,4 +1,5 @@
 {
+    "3.39.0": ["magnetics", "pf_active", "pf_passive", "tf", "wall"],
     "3.37": ["magnetics", "pf_active", "pf_passive", "tf", "wall"],
     "3.34": ["pf_active"]
 }
