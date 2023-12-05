@@ -51,6 +51,14 @@
             "key": "geom_elements.dR"
         }
     },
+    "coil[#]/element[#]/identifier" : {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "C{{ indices.0 + 1 }}_E{{ indices.1 + 1 }}"
+    },
+    "coil[#]/element[#]/turns_with_sign" : {
+    "MAP_TYPE": "VALUE",
+    "VALUE": 1.0
+    },
     "coil[#]/element[#]/geometry/geometry_type": {
         "MAP_TYPE": "VALUE",
         "VALUE": 2
