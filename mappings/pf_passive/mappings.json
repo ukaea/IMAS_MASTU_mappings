@@ -8,12 +8,12 @@
         "VALUE": "{{ length(LOOPS) }}"
     },
     "loop[#]/name": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
-        "ARGS": {
-            "signal": "/passive/efit/{{ PASSIVE_NAME }}",
-            "key": "name"
-        }
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ PASSIVE_NAME }}"
+    },
+    "loop[#]/identifier": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ PASSIVE_NAME }}_L{{ indices.0 + 1 }}"
     },
     "loop[#]/resistance": {
         "MAP_TYPE": "PLUGIN",
