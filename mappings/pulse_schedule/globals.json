@@ -1,3 +1,11 @@
 {
-    "DESCRIPTION": "Global naming conventions and templating parameters for pulse_schedule IDS"
+    "DESCRIPTION": "Global naming conventions and templating parameters for pulse_schedule IDS",
+    "GAP_R": [0.260841, 1.661],
+    "GAP_R_REF": ["RI_REF", "RO_REF"],
+    "SUPPLY_NAME": "{{ at(PF_SUPPLIES, indices.0) }}",
+    "PF_SUPPLIES": [
+        "D1", "D2", "D3", "DP",
+        "D5", "D6", "D7", "P1",
+        "PC", "PX", "P4", "P5", "P6"
+    ]
 }
