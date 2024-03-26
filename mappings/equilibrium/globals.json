@@ -1,0 +1,22 @@
+{
+        "X_POINT_R": [
+            "DNDXPOINT1R",
+            "DNDXPOINT2R"
+        ],
+        "X_POINT_Z": [
+            "DNDXPOINT1Z",
+            "DNDXPOINT2Z"
+        ],
+        "STRIKE_POINT_R": [
+            "DNDXPOINT1INNERSTRIKEPOINTR",
+            "DNDXPOINT1OUTERSTRIKEPOINTR",
+            "DNDXPOINT2INNERSTRIKEPOINTR",
+            "DNDXPOINT2OUTERSTRIKEPOINTR"
+        ],
+        "STRIKE_POINT_Z": [
+            "DNDXPOINT1INNERSTRIKEPOINTZ",
+            "DNDXPOINT1OUTERSTRIKEPOINTZ",
+            "DNDXPOINT2INNERSTRIKEPOINTZ",
+            "DNDXPOINT2OUTERSTRIKEPOINTZ"
+        ]
+}

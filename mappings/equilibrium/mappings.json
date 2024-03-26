@@ -1,0 +1,435 @@
+{
+    "ids_properties/homogeneous_time": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "time": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/TIME"
+        }
+    },
+    "vacuum_toroidal_field/r0": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0.8
+    },
+    "_vacuum_toroidal_field/bvacradprod": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/INPUT/BVACRADIUSPRODUCT"
+        }
+    },
+    "_vacuum_toroidal_field/b0": {
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+            "X": "vacuum_toroidal_field/r0",
+            "Y": "_vacuum_toroidal_field/bvacradprod"
+        },
+        "EXPR": "Y/X"
+    },
+    "vacuum_toroidal_field/b0": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/INPUT/BVACRADIUSPRODUCT"
+        },
+        "SCALE": 1.25
+    },
+    "time_slice": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "20"
+    },
+    "time_slice[#]/global_quantities/ip": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/type": {
+        "COMMENT": "May need changing, values are 0,1,2",
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/DNDXPOINTCOUNT"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/outline/r": {
+        "COMMENT": "Is this 2D, slice to get vector at time slice?",
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/RBOUNDARY"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/outline/z": {
+        "COMMENT": "Is this 2D, slice to get vector at time slice?",
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ZBOUNDARY"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/psi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PSIBOUNDARY"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/geometric_axis/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/RGEOM"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/geometric_axis/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ZGEOM"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/elongation": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/triangularity_upper": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/triangularity_lower": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/x_point": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },
+    "time_slice[#]/boundary_separatrix/x_point[#]/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ at(X_POINT_R, indices.1) }}"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/x_point[#]/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ at(X_POINT_Z, indices.1) }}"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/strike_point": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(STRIKE_POINT_R) }}"
+    },
+    "time_slice[#]/boundary_separatrix/strike_point[#]/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ at(STRIKE_POINT_R, indices.1) }}"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/strike_point[#]/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ at(STRIKE_POINT_Z, indices.1) }}"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/boundary_separatrix/gap": {
+        "MAP_TYPE": "VALUE",
+        "COMMENT": "ADAM to do all gap stuff from pulse schedule",
+        "VALUE": 0
+    },
+    "time_slice[#]/profiles_1d/psi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/POLOIDALFLUX"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/phi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/TOROIDALFLUX"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/pressure": {
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+            "X": "_time_slice[{{indices.0}}]/profiles_1d/static_pressure",
+            "Y": "_time_slice[{{indices.0}}]/profiles_1d/rotational_pressure"
+        },
+        "EXPR": "X + Y"
+    },
+    "time_slice[#]/profiles_1d/f": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/RBPHI"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/dpressure_dpsi": {
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+            "X": "_time_slice[{{indices.0}}]/profiles_1d/static_pprime",
+            "Y": "_time_slice[{{indices.0}}]/profiles_1d/rotational_pprime"
+        },
+        "EXPR": "X + Y"
+    },
+    "time_slice[#]/profiles_1d/f_df_dpsi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/FFPRIME"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/j_tor": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/JAVRG"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/j_parallel": {
+        "MAP_TYPE": "VALUE",
+        "COMMENT": "Not implemented on the MAST-U side",
+        "VALUE": 0
+    },
+    "time_slice[#]/profiles_1d/q": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/Q"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/magnetics_shear": {
+        "MAP_TYPE": "VALUE",
+        "COMMENT": "Not implemented on the MAST-U side",
+        "VALUE": 0
+    },
+    "time_slice[#]/profiles_1d/r_inboard": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/RINBOARD"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/r_outboard": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROUTBOARD"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/rho_tor": {
+        "MAP_TYPE": "VALUE",
+        "COMMENT": "Implement expression sqrt(phi/(pi*b0))",
+        "VALUE": 0
+    },
+    "_time_slice[#]/profiles_1d/dpsi_drho_tor": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Not implemented on the MAST-U side"
+    },
+    "_time_slice[#]/profiles_1d/geometric_axis/r": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Add later"
+    },
+    "_time_slice[#]/profiles_1d/geometric_axis/z": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Add later"
+    },
+    "time_slice[#]/profiles_1d/elongation": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ELONGATION"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/triangularity_upper": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/UPPERTRIANGULARITY"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/triangularity_lower": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/LOWERTRIANGULARITY"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_1d/volume": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/PLASMAFLUXVOLUME"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/rho_volume_norm": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Not implemented on the MAST-U side"
+    },
+    "_time_slice[#]/profiles_1d/dvolume_dpsi": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Not implemented on the MAST-U side"
+    },
+    "_time_slice[#]/profiles_1d/dvolume_drho_tor": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Not implemented on the MAST-U side"
+    },
+    "time_slice[#]/profiles_1d/area": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/POLOIDALFLUXAREA"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "time_slice[#]/profiles_2d[#]/type": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0
+    },
+    "time_slice[#]/profiles_2d[#]/grid_type/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "rectangular"
+    },
+    "time_slice[#]/profiles_2d[#]/grid_type/index": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "time_slice[#]/profiles_2d[#]/grid/dim1": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/R"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d[#]/grid/dim2": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/Z"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d[#]/psi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/POLOIDALFLUX"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d[#]/j_tor": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/JPHI"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d[#]/b_field_r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/BR"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d[#]/b_field_z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/BZ"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "time_slice[#]/profiles_2d[#]/b_field_phi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/PROFILES2D/BPHI"
+        },
+        "SLICE": "[:,:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/static_pressure": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/STATICPRESSURE"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/rotational_pressure": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROTATIONALPRESSURE"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/static_pprime": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/STATICPPRIME"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    },
+    "_time_slice[#]/profiles_1d/rotational_pprime": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROTATIONALPPRIME"
+        },
+        "SLICE": "[:,{{ indices.0 }}]"
+    }
+}
