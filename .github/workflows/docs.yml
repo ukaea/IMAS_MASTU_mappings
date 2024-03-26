@@ -21,10 +21,12 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - name: Generate index 0 mapping files
-        run: sudo apt update && sudo apt install -y tree build-essential && tree . && which g++ && g++ --version
-        # cat ./utils/gen_docs/cpp_gen_ids/run.cpp
-        # g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp
-        # ./a.out
+        run: >
+          sudo apt update
+          sudo apt install -y build-essential
+          g++ --version
+          g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp
+          ./a.out
       - name: Create HTML tables from mapping JSON
         run: python3 ./utils/gen_docs/gen_table_manual.py
       - run: pip install mkdocs-material 
