@@ -4,7 +4,7 @@ on:
     branches:
       - develop
 permissions:
-  contents: write
+  contents: { read, write }
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,12 +20,12 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: |
-        sudo apt update
-        pwd && ls
-        cat ./utils/gen_docs/cpp_gen_ids/run.cpp
-        g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp
-        ./a.out
-      - run: python3 ./utils/gen_docs/gen_table_manual.py
+      - name: Generate index 0 mapping files
+        run: sudo apt update && sudo apt install -y tree && tree .
+        # cat ./utils/gen_docs/cpp_gen_ids/run.cpp
+        # g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp
+        # ./a.out
+      - name: Create HTML tables from mapping JSON
+        run: python3 ./utils/gen_docs/gen_table_manual.py
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
