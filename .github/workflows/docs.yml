@@ -21,7 +21,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - name: Generate index 0 mapping files
-        run: >
+        run: |
           sudo apt update
           sudo apt install -y build-essential
           g++ --version
