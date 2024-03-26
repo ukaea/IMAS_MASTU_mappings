@@ -21,7 +21,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - name: Generate index 0 mapping files
-        run: sudo apt update && sudo apt install -y tree && tree .
+        run: sudo apt update && sudo apt install -y tree build-essential && tree . && which g++
         # cat ./utils/gen_docs/cpp_gen_ids/run.cpp
         # g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp
         # ./a.out
