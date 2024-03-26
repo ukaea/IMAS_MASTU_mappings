@@ -4,18 +4,20 @@
     "DEG2RAD": 0.0174532925199,
     "UNIT_SF": 1000,
     "PLUGIN_ARGS": {
-        "DRAFT_JSON": {
-            "source": "{{ shot }}"
-        },
         "UDA": {
             "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
+            "host": "uda3.mast.l",
+            "port": "56563"
         },
         "GEOMETRY": {
             "source": "{{ shot }}",
-            "host": "uda2.hpc.l",
-            "port": "56565"
+            "host": "uda3.mast.l",
+            "port": "56563"
+        },
+        "CUSTOM_MASTU": {
+            "source": "{{ shot }}",
+            "host": "uda3.mast.l",
+            "port": "56563"
         }
     }
 }
