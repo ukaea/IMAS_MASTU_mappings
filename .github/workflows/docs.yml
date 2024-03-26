@@ -20,7 +20,12 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: sudo apt update && pwd && ls && cat ./utils/gen_docs/cpp_gen_ids/run.cpp && g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp && ./a.out
+      - run: >
+        sudo apt update &&
+        pwd && ls &&
+        cat ./utils/gen_docs/cpp_gen_ids/run.cpp &&
+        g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp &&
+        ./a.out
       - run: python3 ./utils/gen_docs/gen_table_manual.py
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
