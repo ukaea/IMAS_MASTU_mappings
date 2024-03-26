@@ -1,0 +1,27 @@
+.md-header__source {
+    max-width: 12.7rem;
+    width: 12.7rem;
+}
+
+table {
+	border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+	border: 1px solid #dddfe1;
+    width: 100%;
+}
+table th {
+	padding: 15px;
+    color: #000000;
+	border: 1px solid #dddfe1;
+	background-color: #e5e5e5;
+}
+table td {
+	padding: 15px;
+	border: 1px solid #dddfe1;
+}
+table thead td {
+	background-color: #4051b5;
+    color: #ffffff;
+	font-weight: bold;
+	border: 1px solid #dddfe1;
+}
