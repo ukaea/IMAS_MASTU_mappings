@@ -7,6 +7,11 @@ def json_to_table(json_data):
         return func_html_output
 
     for ikey, ivalue in json_data.items():
+        if ikey == "COMMENT":
+            func_html_output += '<tfoot>'
+            func_html_output += f'<tr><td colspan="2"><b><i>{ivalue}</i></b></td></tr>'
+            func_html_output += '</tfoot>'
+            continue
         func_html_output += '<tr>'
         func_html_output += f'<th><b>{ikey}</b></th>'
         if isinstance(ivalue, dict):
