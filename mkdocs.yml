@@ -103,6 +103,7 @@ nav:
       - mappings: 'mappings/magnetics/mappings.md'
     - pf_active:
       - overview: 'mappings/pf_active/overview.md'
+      - connections: 'mappings/pf_active/connections.md'
       - mappings: 'mappings/pf_active/mappings.md'
     - pf_passive:
       - overview: 'mappings/pf_passive/overview.md'
