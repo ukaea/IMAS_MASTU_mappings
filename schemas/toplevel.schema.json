@@ -32,8 +32,8 @@
                 "COMMENT": { "type": "string" }
             },
             "required": [
-                        "MAP_TYPE",
-                        "DIM_PROBE"
+                "MAP_TYPE",
+                "DIM_PROBE"
             ],
             "additionalProperties": false
         },
@@ -44,8 +44,8 @@
                 "COMMENT": { "type": "string" }
             },
             "required": [
-                        "MAP_TYPE",
-                        "VALUE"
+                "MAP_TYPE",
+                "VALUE"
             ],
             "additionalProperties": false
         },
@@ -74,9 +74,9 @@
                 "COMMENT": { "type": "string" }
             },
             "required": [
-                        "MAP_TYPE",
-                        "ARGS",
-                        "PLUGIN"
+                "MAP_TYPE",
+                "ARGS",
+                "PLUGIN"
             ],
             "additionalProperties": false
         },
@@ -96,9 +96,9 @@
                 "COMMENT": { "type": "string" }
             },
             "required": [
-                            "MAP_TYPE",
-                            "PARAMETERS",
-                            "EXPR"
+                "MAP_TYPE",
+                "PARAMETERS",
+                "EXPR"
             ],
             "additionalProperties": false
         },
@@ -109,8 +109,8 @@
                 "COMMENT": { "type": "string" }
             },
             "required": [
-                            "MAP_TYPE",
-                            "CUSTOM_TYPE"
+                "MAP_TYPE",
+                "CUSTOM_TYPE"
             ],
             "additionalProperties": false
         }
