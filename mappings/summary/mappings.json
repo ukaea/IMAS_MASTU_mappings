@@ -1,7 +1,14 @@
 {
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
-        "VALUE": 2
+        "VALUE": 1
+    },
+    "time": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/ESM/TIME"
+        }
     },
     "globals_quantities/ip/value": {
         "MAP_TYPE": "PLUGIN",
@@ -11,16 +18,28 @@
         },
         "SCALE": 1000
     },
-    "global_quantities/r0": {
+    "globals_quantities/ip/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "AMC:PLASMA_CURRENT"
+    },
+    "global_quantities/r0/value": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0.8
     },
-    "global_quantities/b0": {
+    "global_quantities/b0/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/INPUT/BVACRADIUSPRODUCT"
+        },
+        "SCALE": 1.25,
+        "COMMENT": "Scaled by 1/r0, r0 hardcoded to be 0.8 --> 1.25"
+    },
+    "_global_quantities/b0/value": {
         "MAP_TYPE": "EXPR",
         "PARAMETERS": {
             "X": "_BVACRADIUSPRODUCT",
             "Y": "global_quantities/r0"
-            
         },
         "EXPR": "X/Y"
     },
@@ -31,77 +50,185 @@
             "signal": "/EPM/INPUT/BVACRADIUSPRODUCT"
         }
     },
-    "global_quantities/q_95": {
+    "globals_quantities/b0/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "EPM:BVACRADIUSPRODUCT * r0 (1.25)"
+    },
+    "global_quantities/li/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
-            "signal": "/epm/output/globalParameters/q95"
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/LI3"
         }
     },
-    "global_quantities/power_ohm": {
+    "globals_quantities/li/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "EPM:GLOBALPARAMETERS/LI3"
+    },
+    "global_quantities/q_95/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
-            "signal": "<to be added to ESM>"
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/Q95"
         }
     },
-    "global_quantities/beta_tor": {
+    "global_quantities/q_95/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "EPM:GLOBALPARAMETERS/Q95"
+    },
+    "global_quantities/power_ohm/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/ESM/POHM"
+        }
+    },
+    "global_quantities/power_ohm/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "ESM:POHM"
+    },
+    "global_quantities/beta_tor/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
-        },
-        "COMMENT": "NEED TO CHECK"
+        }
     },
-    "boundary/elongation": {
+    "global_quantities/beta_tor/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/BETAT"
+    },
+    "_global_quantities/beta_tor_mhd/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
+        }
+    },
+    "_global_quantities/beta_tor_mhd/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/BETAT"
+    },
+    "global_quantities/beta_tor_norm/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAN"
+        }
+    },
+    "global_quantities/beta_tor_norm/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/BETAN"
+    },
+    "global_quantities/beta_pol/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAP"
+        }
+    },
+    "global_quantities/beta_pol/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/BETAP"
+    },
+    "_global_quantities/beta_pol_mhd/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAP"
+        }
+    },
+    "_global_quantities/beta_pol_mhd/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/BETAP"
+    },
+    "global_quantities/energy_total/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
+        }
+    },
+    "global_quantities/energy_total/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/PLASMAENERGY"
+    },
+    "global_quantities/volume/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME"
+        }
+    },
+    "global_quantities/volume/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:GLOBALPARAMETERS/PLASMAVOLUME"
+    },
+    "boundary/elongation/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION"
         }
     },
-    "boundary/triangularity_upper": {
+    "boundary/elongation/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:SEPARATRIXGEOMETRY/ELONGATION"
+    },
+    "boundary/triangularity_upper/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
         }
     },
-    "boundary/triangularity_lower": {
+    "boundary/triangularity_upper/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
+    },
+    "boundary/triangularity_lower/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
         }
     },
-    "local/magnetics_axis/n_e": {
+    "boundary/triangularity_lower/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "EPM:SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
+    },
+    "local/magnetics_axis/n_e/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
-            "signal": "<to be added to ESM>"
+            "signal": "/ESM/NEBAR"
         }
     },
-    "local/magnetics_axis/t_e": {
+    "local/magnetics_axis/n_e/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "ESM:NEBAR"
+    },
+    "_local/magnetics_axis/t_e/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
-            "signal": "<to be added to ESM>"
+            "signal": "<Not in EPM or ESM>"
         }
     },
-    "_local/magnetics_axis/p_e": {
+    "_local/magnetics_axis/t_e/source": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
-            "signal": "<to be added to ESM>"
-        },
-        "COMMENT": "No equivalent in the IDS"
+        "VALUE": "<Not in EPM or ESM>"
     },
-    "heating_current_drive/power_nbi": {
+    "heating_current_drive/power_nbi/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/ANB/SUM/POWER"
         },
-        "SCALE": "10e6"
+        "SCALE": "10E6"
+    },
+    "heating_current_drive/power_nbi/source": {
+        "MAP_TYPE": "PLUGIN",
+        "VALUE": "ANB:SUM/POWER"
     }
 }
