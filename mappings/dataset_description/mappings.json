@@ -1,0 +1,27 @@
+{
+    "ids_properties/homogeneous_time": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },
+    "data_entry/user": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "DMP SICO Scenario A"
+    },
+    "data_entry/machine": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "MAST-U"
+    },
+    "data_entry/pulse_type": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "pulse"
+    },
+    "data_entry/pulse": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ shot }}"
+    },
+    "data_entry/run": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "999",
+        "COMMENT": "Run number for MAST-U?"
+    }
+}
