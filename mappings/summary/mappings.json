@@ -103,24 +103,24 @@
     "global_quantities/beta_pol_mhd/value": {
         "MAP_TYPE": "EXPR",
         "PARAMETERS": {
-            "wplasma": "global_quantities/energy_total/value",
+            "wplasma": "global_quantities/energy_mhd/value",
             "ip": "_epmcurrent/value",
             "R0": "global_quantities/r0/value"
         },
-        "EXPR": "4 * (wplasma / 1.5) / (R0 * {{ MU0VAL }} * ip**2)"
+        "EXPR": "4 * (wplasma / 1.5) / (R0 * {{MU0VAL}} * ip * ip)"
     },
     "global_quantities/beta_pol_mhd/source": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "4 int(p dV) = (wplasma / 1.5). Therefore, betap = 4 * (wplasma / 1.5) / (R0 * {{ mu0val }} * ip**2). ip=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT, r0=0.8, wplasma=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
+        "VALUE": "4 int(p dV) = (wplasma / 1.5). Therefore, betap = 4 * (wplasma / 1.5) / (R0 * MU0VAL * ip^2). ip=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT, r0=0.8, wplasma=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
     },
-    "global_quantities/energy_total_mhd/value": {
+    "global_quantities/energy_mhd/value": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
         "ARGS": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
         }
     },
-    "global_quantities/energy_total_mhd/source": {
+    "global_quantities/energy_mhd/source": {
         "MAP_TYPE": "VALUE",
         "VALUE": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
     },
