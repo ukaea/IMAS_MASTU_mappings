@@ -33,6 +33,18 @@
         "MAP_TYPE": "DIMENSION",
         "DIM_PROBE": "time"
     },
+    "_time_slice[#]/global_quantities/beta_pol": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/beta_tor": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/beta_normal": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
     "time_slice[#]/global_quantities/ip": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "UDA",
@@ -40,6 +52,150 @@
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT"
         },
         "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/li_3": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/LI3"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/volume": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/area": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/POLOIDALAREA"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "_time_slice[#]/global_quantities/surface": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/length_pol": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "time_slice[#]/global_quantities/psi_axis": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PSIAXIS"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/psi_boundary": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PSIBOUNDARY"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "_time_slice[#]/global_quantities/rho_tor_boundary": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "time_slice[#]/global_quantities/magnetic_axis/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/MAGNETICAXIS/R"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/magnetic_axis/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/MAGNETICAXIS/Z"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/magnetic_axis/b_field_tor": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BPHIRMAG"
+        },
+        "SLICE": "[{{ indices.0 }}]",
+        "COMMENT": "DUPLICATE DDVersion differences"
+    },
+    "time_slice[#]/global_quantities/magnetic_axis/b_field_phi": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BPHIRMAG"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/current_centre/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/CURRENTCENTROID/R"
+        },
+        "SLICE": "[{{ indices.0 }}]",
+        "COMMENT": "TO BE CHECKED"
+    },
+    "time_slice[#]/global_quantities/current_centre/z": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/CURRENTCENTROID/Z"
+        },
+        "SLICE": "[{{ indices.0 }}]",
+        "COMMENT": "TO BE CHECKED"
+    },
+    "_time_slice[#]/global_quantities/current_centre/velocity_z": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/q_axis": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy, maybe q1Radius?"
+    },
+    "time_slice[#]/global_quantities/q_95": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/Q95"
+        },
+        "SLICE": "[{{ indices.0 }}]"
+    },
+    "time_slice[#]/global_quantities/energy_mhd": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "UDA",
+        "ARGS": {
+            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
+        },
+        "SLICE": "[{{ indices.0 }}]",
+        "COMMENT": "TO BE CHECKED, fast particles included?"
+    },
+    "_time_slice[#]/global_quantities/psi_external_average": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/v_external": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/plasma_inductance": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
+    },
+    "_time_slice[#]/global_quantities/plasma_resistance": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Ask Lucy"
     },
     "time_slice[#]/boundary_separatrix/type": {
         "COMMENT": "May need changing, values are 0,1,2",
