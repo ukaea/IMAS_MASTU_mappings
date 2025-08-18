@@ -1,9 +1,9 @@
 {
     "COMMENT_1": "Top-level globals.json, relevant variables to all IDSs. Includes all templating substitutions",
-    "COMMENT_2": "PLUGIN_ARGS defines the mandatory arguments for each plugin request",
+    "COMMENT_2": "DATA_SOURCE_CONFIG defines the mandatory arguments for each plugin request",
     "DEG2RAD": 0.0174532925199,
     "UNIT_SF": 1000,
-    "PLUGIN_CONFIG": {
+    "DATA_SOURCE_CONFIG": {
         "UDA": {
             "ARGS": {
                 "source": "{{ shot }}",

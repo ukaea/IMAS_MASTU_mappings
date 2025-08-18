@@ -1,10 +1,10 @@
 {
     "DESCRIPTION": "Global naming conventions and templating parameters for magnetics IDS",
     "FL_TYPE_MAP": {"FLUX": 1, "SADDLE": 2},
-    "FL_TYPE": "{{ at(FLUX_LOOPS, indices.0).TYPE }}",
-    "FL_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOP_NAME }}",
-    "LOOPV_NAME": "{{ at(FLUX_LOOPS, indices.0).LOOPV }}",
-    "BPOL_NAME": "{{ at(BPOL_PROBES, indices.0) }}",
+    "FL_TYPE": "{{ FLUX_LOOPS[#0].TYPE }}",
+    "FL_NAME": "{{ FLUX_LOOPS[#0].LOOP_NAME }}",
+    "LOOPV_NAME": "{{ FLUX_LOOPS[#0].LOOPV }}",
+    "BPOL_NAME": "{{ BPOL_PROBES[#0] }}",
     "FL_POSITION_MAP": {"FLUX": "coordinate", "SADDLE": "coilPath"},
     "FLUX_LOOPS": [
         {
