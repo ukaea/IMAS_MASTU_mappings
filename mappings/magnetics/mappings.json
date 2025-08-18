@@ -89,10 +89,6 @@
     "b_field_pol_probe[#]/type/name": "mirnov",
     "b_field_pol_probe[#]/type/index": 2,
     "b_field_pol_probe[#]/type/description": "Mirnov Probe",
-    "b_field_pol_probe[#]/position": {
-        "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "b_field_pol_probe[#]/position/r"
-    },
     "b_field_pol_probe[#]/position/r": {
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "GEOMETRY",
