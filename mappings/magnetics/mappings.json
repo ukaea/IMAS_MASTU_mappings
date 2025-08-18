@@ -71,7 +71,7 @@
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "/AMC/PLASMA_CURRENT"
-        s},
+        },
         "SCALE": 1000
     },
     "ip[#]/time": {
@@ -89,8 +89,7 @@
     "b_field_pol_probe[#]/type/name": "mirnov",
     "b_field_pol_probe[#]/type/index": 2,
     "b_field_pol_probe[#]/type/description": "Mirnov Probe",
-    "_:q
-    b_field_pol_probe[#]/position": {
+    "b_field_pol_probe[#]/position": {
         "MAP_TYPE": "DIMENSION",
         "DIM_PROBE": "b_field_pol_probe[#]/position/r"
     },
