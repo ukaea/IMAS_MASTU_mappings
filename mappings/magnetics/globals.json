@@ -3,7 +3,7 @@
     "FL_TYPE_MAP": {"FLUX": 1, "SADDLE": 2},
     "FL_TYPE": "{{ FLUX_LOOPS[#0].TYPE }}",
     "FL_NAME": "{{ FLUX_LOOPS[#0].LOOP_NAME }}",
-    "LOOPV_NAME": "{{ FLUX_LOOPS[#0].LOOPV }}",
+    "LOOPV_NAME": "{% if existsIn(at(FLUX_LOOPS, indices.0), \"LOOPV\") %}{{ at(FLUX_LOOPS, indices.0).LOOPV }}{% endif %}",
     "BPOL_NAME": "{{ BPOL_PROBES[#0] }}",
     "FL_POSITION_MAP": {"FLUX": "coordinate", "SADDLE": "coilPath"},
     "FLUX_LOOPS": [
