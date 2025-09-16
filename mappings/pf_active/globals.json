@@ -1,11 +1,11 @@
 {
     "DESCRIPTION": "Global naming conventions and templating parameters for pf_active IDS",
-    "PF_NAME": "{{ at(PF_COILS, indices.0).COIL_NAME }}",
-    "PF_GEOM_NAME": "{{ at(PF_COILS, indices.0).GEOM_NAME }}",
-    "FUNCTION": "{{ at(PF_COILS, indices.0).TYPE }}",
-    "PF_PS_NAME": "{{ at(PF_SUPPLIES, indices.0).PS_NAME }}",
-    "SUPPLY_CURRENT_NAME": "{{ at(PF_SUPPLIES, indices.0).CURRENT }}",
-    "SUPPLY_VOLTAGE_NAME": "{{ at(PF_SUPPLIES, indices.0).VOLTAGE }}",
+    "PF_NAME": "{{ PF_COILS[#0].COIL_NAME }}",
+    "PF_GEOM_NAME": "{{ PF_COILS[#0].GEOM_NAME }}",
+    "FUNCTION": "{{ PF_COILS[#0].TYPE }}",
+    "PF_PS_NAME": "{{ PF_SUPPLIES[#0].PS_NAME }}",
+    "SUPPLY_CURRENT_NAME": "{{ PF_SUPPLIES[#0].CURRENT }}",
+    "SUPPLY_VOLTAGE_NAME": "{{ PF_SUPPLIES[#0].VOLTAGE }}",
     "PF_COILS": [
         {
             "COIL_NAME": "D1U",
