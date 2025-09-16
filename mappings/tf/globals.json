@@ -1,3 +1,4 @@
 {
-    "DESCRIPTION": "Global naming conventions and templating parameters for tf IDS"
+    "DESCRIPTION": "Global naming conventions and templating parameters for tf IDS",
+    "COMMENT": "b_field_tor_vacuum_r - From Ampere's law at r=1metre, takes into account the number of TF coils"
 }
