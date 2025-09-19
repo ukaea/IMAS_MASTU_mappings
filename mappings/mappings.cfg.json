@@ -5,5 +5,5 @@
         "version": "0.1.0"
     },
     "partitions": [],
-    "groups": ["magnetics", "pf_active", "wall", "tf"]
+    "groups": ["magnetics", "pf_active", "pf_passive", "wall", "tf"]
 }

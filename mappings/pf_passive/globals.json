@@ -1,7 +1,7 @@
 {
     "DESCRIPTION": "Global naming conventions and templating parameters for pf_passive IDS",
-    "PASSIVE_NAME": "{{ at(LOOPS, indices.0).NAME }}",
-    "PASSIVE_CURRENT": "{{ at(LOOPS, indices.0).CURRENT }}",
+    "PASSIVE_NAME": "{{ LOOPS[#0].NAME }}",
+    "PASSIVE_CURRENT": "{% if existsIn(at(LOOPS, indices.0), \"CURRENT\") %}{{ at(LOOPS, indices.0).CURRENT }}{% else %}void{% endif %}",
     "LOOPS": [
         {
             "NAME": "centrecolumn"

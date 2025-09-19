@@ -88,7 +88,7 @@
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
-            "ps_name": "{{ PF_PS_NAME }}",
+            "signal": "{{ PF_PS_NAME }}",
             "function": "pf_conn_matrix"
         }
     },

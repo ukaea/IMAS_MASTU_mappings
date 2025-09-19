@@ -1,180 +1,161 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "loop": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(LOOPS) }}"
-    },
-    "loop[#]/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}"
-    },
-    "loop[#]/identifier": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}_L{{ indices.0 + 1 }}"
-    },
+    "ids_properties/homogeneous_time": 0,
+    "loop": "{{ length(LOOPS) }}",
+    "loop[#]/name": "{{ PASSIVE_NAME }}",
     "loop[#]/resistance": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "resistance"
         }
     },
     "loop[#]/resistivity": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "resistivity"
         }
     },
     "loop[#]/current": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "{{ PASSIVE_CURRENT }}"
         },
         "SCALE": "{{ UNIT_SF }}"
     },
     "loop[#]/time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
         "ARGS": {
-            "signal": "{{ PASSIVE_CURRENT }}"
-        },
-        "COMMENT": "Separate time field, does not fit convention"
+            "signal": "{{ PASSIVE_CURRENT }}",
+            "time": true
+        }
     },
     "loop[#]/element": {
         "MAP_TYPE": "DIMENSION",
         "DIM_PROBE": "_loop[#]/element[#]/n_elements"
     },
     "_loop[#]/element[#]/n_elements": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "centreR"
         }
     },
-    "loop[#]/element[#]/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}_E{{ indices.1 + 1}}"
-    },
-    "loop[#]/element[#]/identifier": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PASSIVE_NAME }}_L{{ indices.0 + 1 }}_E{{ indices.1 + 1 }}"
-    },
+    "loop[#]/element[#]/name": "{{ PASSIVE_NAME }}_E{{ #1 + 1 }}",
+    "loop[#]/element[#]/identifier": "{{ PASSIVE_NAME }}_L{{ #0 + 1 }}_E{{ #1 + 1 }}",
     "loop[#]/element[#]/geometry/geometry_type": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "geometry_type",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/rectangle/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.centreR",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/rectangle/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.centreZ",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/rectangle/width": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.dR",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/rectangle/height": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.dZ",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/oblique/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.centreR",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/oblique/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.centreZ",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/oblique/length_alpha": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.dR",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/oblique/length_beta": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.dZ",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/oblique/alpha": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.shapeAngle1",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     },
     "loop[#]/element[#]/geometry/oblique/beta": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.shapeAngle2",
-            "element": "{{ indices.1 }}"
-        },
-        "FUNCTION": "custom_passive_structures"
+            "element": "{{ #1 }}",
+            "function": "custom_passive_structures"
+        }
     }
 }
