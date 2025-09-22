@@ -1,5 +1,12 @@
 {
-    "ids_properties/homogeneous_time": 0,
+    "ids_properties/homogeneous_time": 1,
+    "time": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
+        "ARGS": {
+            "signal": "/AMB/CTIME"
+        }
+    },
     "flux_loop": "{{ length(FLUX_LOOPS) }}",
     "flux_loop[#]/name": "{{ FL_NAME }}",
     "flux_loop[#]/identifier": "FLUX_LOOP_{{ #0 + 1 }}",
@@ -42,27 +49,11 @@
             "signal": "/AMB/{{ FL_TYPE }}/{{ FL_NAME }}"
         }
     },
-    "flux_loop[#]/flux/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
-            "signal": "/AMB/{{ FL_TYPE }}/{{ FL_NAME }}",
-             "time": true
-        }
-    },
     "flux_loop[#]/voltage/data": {
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "/AMB/LOOPV/{{ LOOPV_NAME }}"
-        }
-    },
-    "flux_loop[#]/voltage/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
-            "signal": "/AMB/LOOPV/{{ LOOPV_NAME }}",
-            "time": true
         }
     },
     "ip": 1,
@@ -73,14 +64,6 @@
             "signal": "/AMC/PLASMA_CURRENT"
         },
         "SCALE": 1000
-    },
-    "ip[#]/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
-            "signal": "/AMC/PLASMA_CURRENT",
-            "time": true
-        }
     },
     "ip[#]/method_name": "IP Rogowski measurement",
     "b_field_pol_probe": "{{ length(BPOL_PROBES) }}",
@@ -143,14 +126,6 @@
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "/AMB/PICKUP/{{ BPOL_NAME }}"
-        }
-    },
-    "b_field_pol_probe[#]/field/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
-            "signal": "/AMB/PICKUP/{{ BPOL_NAME }}",
-            "time": true
         }
     },
     "b_field_pol_probe[#]/poloidal_angle": {
