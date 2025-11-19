@@ -32,14 +32,16 @@
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
-        }
+        },
+        "SLICE": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/beta_normal": {
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BETAN"
-        }
+        },
+        "SLICE": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/ip": {
         "MAP_TYPE": "DATA_SOURCE",
