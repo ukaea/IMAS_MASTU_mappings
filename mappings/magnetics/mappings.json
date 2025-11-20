@@ -42,6 +42,16 @@
         },
         "SLICE": "[{{ #1 }}]"
     },
+    "flux_loop[#]/position[#]/phi": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
+        "ARGS": {
+            "signal": "{{ FL_PHI }}",
+            "key": "coilPath.phi"
+        },
+        "SLICE": "[{{ #1 }}]",
+        "SCALE": "{{ DEG2RAD }}"
+    },
     "flux_loop[#]/flux/data": {
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "UDA",
@@ -63,7 +73,7 @@
         "ARGS": {
             "signal": "/AMC/PLASMA_CURRENT"
         },
-        "SCALE": 1000
+        "SCALE": "{{ UNIT_SF }}"
     },
     "ip[#]/method_name": "IP Rogowski measurement",
     "b_field_pol_probe": "{{ length(BPOL_PROBES) }}",
