@@ -136,67 +136,67 @@
     "PF_SUPPLIES": [
         {
             "PS_NAME": "D1PS",
-            "CURRENT": "/XCM/D1/IOUT",
+            "CURRENT": "/AMC/ROGEXT/D1U",
             "VOLTAGE": "/XCM/D1/VOUT"
         },
         {
             "PS_NAME": "D2PS",
-            "CURRENT": "/XCM/D2/IOUT",
+            "CURRENT": "/AMC/ROGEXT/D2U",
             "VOLTAGE": "/XCM/D2/VOUT"
         },
         {
             "PS_NAME": "D3PS",
-            "CURRENT": "/XCM/D3/IOUT",
+            "CURRENT": "/AMC/ROGEXT/D3U",
             "VOLTAGE": "/XCM/D3/VOUT"
         },
         {
             "PS_NAME": "DPPS",
-            "CURRENT": "/XCM/DP/IOUT",
+            "CURRENT": "/AMC/ROGEXT/DPU",
             "VOLTAGE": "/XCM/DP/VOUT"
         },
         {
             "PS_NAME": "D5PS",
-            "CURRENT": "/XCM/D5/IOUT",
+            "CURRENT": "/AMC/ROGEXT/D5U",
             "VOLTAGE": "/XCM/D5/VOUT"
         },
         {
             "PS_NAME": "D6PS",
-            "CURRENT": "/XCM/D6/IOUT",
+            "CURRENT": "/AMC/ROGEXT/D6U",
             "VOLTAGE": "/XCM/D6/VOUT"
         },
         {
             "PS_NAME": "D7PS",
-            "CURRENT": "/XCM/D7/IOUT",
+            "CURRENT": "/AMC/ROGEXT/D7U",
             "VOLTAGE": "/XCM/D7/VOUT"
         },
         {
             "PS_NAME": "P1PS",
-            "CURRENT": "/XCM/P1PS/CURRENT",
+            "CURRENT": "/AMC/ROGEXT/P1",
             "VOLTAGE": "/XCM/P1PS/VOLTS"
         },
         {
             "PS_NAME": "EFPS",
-            "CURRENT": "/XCM/EFPS/CURRENT",
+            "CURRENT": "void",
             "VOLTAGE": "/XCM/EFPS/VOLTS"
         },
         {
             "PS_NAME": "PXPS",
-            "CURRENT": "/XCM/PX/IOUT",
+            "CURRENT": "/AMC/ROGEXT/PXU",
             "VOLTAGE": "/XCM/PX/VOUT"
         },
         {
             "PS_NAME": "SFPS",
-            "CURRENT": "/XCM/SFPS/CURRENT",
+            "CURRENT": "/AMC/ROGEXT/P4U",
             "VOLTAGE": "/XCM/SFPS/VOLTS"
         },
         {
             "PS_NAME": "MFPS",
-            "CURRENT": "/XCM/MFPS/CURRENT",
+            "CURRENT": "/AMC/ROGEXT/P5U",
             "VOLTAGE": "/XCM/MFPS/VOLTS"
         },
         {
             "PS_NAME": "RFPS",
-            "CURRENT": "/XWS/RTP/PC/CALC/P6-I-ABS",
+            "CURRENT": "/AMC/ROGEXT/P6U",
             "VOLTAGE": "/XCM/RFPS/VOUT"
         }
     ]

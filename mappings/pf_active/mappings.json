@@ -100,7 +100,8 @@
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "{{ SUPPLY_CURRENT_NAME }}"
-        }
+        },
+        "SCALE": "{{ UNIT_SF }}"
     },
     "supply[#]/current/time": {
         "MAP_TYPE": "DATA_SOURCE",
@@ -110,14 +111,14 @@
             "time": true
         }
     },
-    "supply[#]/voltage/data": {
+    "_supply[#]/voltage/data": {
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "{{ SUPPLY_VOLTAGE_NAME }}"
         }
     },
-    "supply[#]/voltage/time": {
+    "_supply[#]/voltage/time": {
         "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "UDA",
         "ARGS": {
