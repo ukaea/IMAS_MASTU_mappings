@@ -170,7 +170,7 @@
             "key": "orientation.unit_vector.z"
         }
     },
-    "b_field_p_probe": "{{ length(BPHI_PROBES) }}",
+    "b_field_phi_probe": "{{ length(BPHI_PROBES) }}",
     "b_field_phi_probe[#]/name": "{{ BPHI_NAME }}",
     "b_field_phi_probe[#]/identifier": "BPHI_PROBE_{{ #0 + 1 }}",
     "b_field_phi_probe[#]/type/name": "mirnov",
