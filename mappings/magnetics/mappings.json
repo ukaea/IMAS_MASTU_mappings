@@ -249,7 +249,7 @@
         }
     },
     "_temp/pickup_phi[#]/unit_vector/r": {
-        "MAP_TYPE": "2025-11-20_SOURCE",
+        "MAP_TYPE": "DATA_SOURCE",
         "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "{{ BPHI_NAME }}",
