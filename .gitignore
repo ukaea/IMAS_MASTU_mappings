@@ -5,3 +5,11 @@ build/*
 *.so
 *.o
 tests/*.cpp
+site
+
+# Generated documentation (generated on-the-fly by mkdocs hooks)
+docs/index.md
+docs/mappings/*/overview.md
+docs/mappings/*/mappings.md
+# Keep manually maintained files
+!docs/mappings/pf_active/connections.md

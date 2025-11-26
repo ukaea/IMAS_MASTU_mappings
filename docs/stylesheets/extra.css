@@ -3,25 +3,356 @@
     width: 12.7rem;
 }
 
-table {
-	border-collapse: collapse;
+/* Hide Material content action buttons globally */
+.md-content__button,
+a.md-content__button,
+button.md-content__button {
+    display: none !important;
+}
+
+/* Standard table styles - Light mode */
+[data-md-color-scheme="default"] table {
+    border-collapse: collapse;
     font-family: Tahoma, Geneva, sans-serif;
-	border: 1px solid #dddfe1;
+    border: 1px solid #dddfe1;
     width: 100%;
 }
-table th {
-	padding: 15px;
+
+[data-md-color-scheme="default"] table th {
+    padding: 15px;
     color: #000000;
-	border: 1px solid #dddfe1;
-	background-color: #e5e5e5;
+    border: 1px solid #dddfe1;
+    background-color: #e5e5e5;
 }
-table td {
-	padding: 15px;
-	border: 1px solid #dddfe1;
+
+[data-md-color-scheme="default"] table td {
+    padding: 15px;
+    border: 1px solid #dddfe1;
 }
-table thead td {
-	background-color: #4051b5;
+
+[data-md-color-scheme="default"] table thead td {
+    background-color: #4051b5;
     color: #ffffff;
-	font-weight: bold;
-	border: 1px solid #dddfe1;
+    font-weight: bold;
+    border: 1px solid #dddfe1;
+}
+
+/* Standard table styles - Dark mode */
+[data-md-color-scheme="slate"] table {
+    border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+    border: 1px solid #3a3a3a;
+    width: 100%;
+}
+
+[data-md-color-scheme="slate"] table th {
+    padding: 15px;
+    color: #ffffff;
+    border: 1px solid #3a3a3a;
+    background-color: #2d2d2d;
+}
+
+[data-md-color-scheme="slate"] table td {
+    padding: 15px;
+    border: 1px solid #3a3a3a;
+    background-color: #1e1e1e;
+}
+
+[data-md-color-scheme="slate"] table thead td {
+    background-color: #3949ab;
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #3a3a3a;
+}
+
+/* Mapping table specific styles */
+.mappings-table {
+    margin: 1rem 0;
+}
+
+.mapping-entry {
+    margin-bottom: 1.5rem;
+}
+
+/* Light mode mapping tables */
+[data-md-color-scheme="default"] .mapping-entry {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-md-color-scheme="default"] .mapping-entry thead th {
+    background-color: #4051b5;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 0.95em;
+}
+
+[data-md-color-scheme="default"] .mapping-entry thead th code {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="default"] .mapping-entry tbody td.label {
+    font-weight: bold;
+    background-color: #f5f5f5;
+    width: 180px;
+    white-space: nowrap;
+}
+
+[data-md-color-scheme="default"] .mapping-entry tbody td {
+    padding: 10px 15px;
+    vertical-align: top;
+}
+
+[data-md-color-scheme="default"] .mapping-entry tbody td code {
+    background-color: #f8f8f8;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+[data-md-color-scheme="default"] .mapping-entry tbody td pre {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 3px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+/* Dark mode mapping tables */
+[data-md-color-scheme="slate"] .mapping-entry {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+[data-md-color-scheme="slate"] .mapping-entry thead th {
+    background-color: #3949ab;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 0.95em;
+}
+
+[data-md-color-scheme="slate"] .mapping-entry thead th code {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="slate"] .mapping-entry tbody td.label {
+    font-weight: bold;
+    background-color: #2d2d2d;
+    width: 180px;
+    white-space: nowrap;
+}
+
+[data-md-color-scheme="slate"] .mapping-entry tbody td {
+    padding: 10px 15px;
+    vertical-align: top;
+    background-color: #1e1e1e;
+}
+
+[data-md-color-scheme="slate"] .mapping-entry tbody td code {
+    background-color: #2d2d2d;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #e0e0e0;
+}
+
+[data-md-color-scheme="slate"] .mapping-entry tbody td pre {
+    background-color: #2d2d2d;
+    padding: 10px;
+    border-radius: 3px;
+    overflow-x: auto;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+/* Type badges */
+.type-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Light mode type badges */
+[data-md-color-scheme="default"] .type-badge.type-data_source {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+[data-md-color-scheme="default"] .type-badge.type-expr {
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+}
+
+[data-md-color-scheme="default"] .type-badge.type-dimension {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+[data-md-color-scheme="default"] .type-badge.type-value {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+[data-md-color-scheme="default"] .type-badge.type-object {
+    background-color: #f5f5f5;
+    color: #424242;
+}
+
+/* Dark mode type badges */
+[data-md-color-scheme="slate"] .type-badge.type-data_source {
+    background-color: #1565c0;
+    color: #e3f2fd;
+}
+
+[data-md-color-scheme="slate"] .type-badge.type-expr {
+    background-color: #6a1b9a;
+    color: #f3e5f5;
+}
+
+[data-md-color-scheme="slate"] .type-badge.type-dimension {
+    background-color: #e65100;
+    color: #fff3e0;
+}
+
+[data-md-color-scheme="slate"] .type-badge.type-value {
+    background-color: #2e7d32;
+    color: #e8f5e9;
+}
+
+[data-md-color-scheme="slate"] .type-badge.type-object {
+    background-color: #424242;
+    color: #f5f5f5;
+}
+
+/* Example section styles - Light mode */
+[data-md-color-scheme="default"] .example-section {
+    background-color: #f8f9fa;
+}
+
+[data-md-color-scheme="default"] .example-section details {
+    padding: 15px;
+}
+
+[data-md-color-scheme="default"] .example-section summary {
+    cursor: pointer;
+    color: #4051b5;
+    font-weight: 600;
+    padding: 5px 5px 5px 0;
+    margin: -5px -5px -5px 0;
+    display: list-item;
+}
+
+[data-md-color-scheme="default"] .example-section summary::marker {
+    color: #4051b5;
+}
+
+[data-md-color-scheme="default"] .example-section summary::-webkit-details-marker {
+    color: #4051b5;
+}
+
+[data-md-color-scheme="default"] .example-section summary:hover {
+    background-color: #e3f2fd;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="default"] .example-content {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-left: 3px solid #4051b5;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="default"] .example-content > div {
+    margin: 10px 0;
+}
+
+[data-md-color-scheme="default"] .example-content .example-path {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 10px;
+}
+
+[data-md-color-scheme="default"] .example-content code {
+    background-color: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Dark mode example section */
+[data-md-color-scheme="slate"] .example-section {
+    background-color: #1a1a1a;
+}
+
+[data-md-color-scheme="slate"] .example-section details {
+    padding: 15px;
+}
+
+[data-md-color-scheme="slate"] .example-section summary {
+    cursor: pointer;
+    color: #7986cb;
+    font-weight: 600;
+    padding: 5px 5px 5px 0;
+    margin: -5px -5px -5px 0;
+    display: list-item;
+}
+
+[data-md-color-scheme="slate"] .example-section summary::marker {
+    color: #7986cb;
+}
+
+[data-md-color-scheme="slate"] .example-section summary::-webkit-details-marker {
+    color: #7986cb;
+}
+
+[data-md-color-scheme="slate"] .example-section summary:hover {
+    background-color: #2a2a2a;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="slate"] .example-content {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #252525;
+    border-left: 3px solid #5c6bc0;
+    border-radius: 3px;
+}
+
+[data-md-color-scheme="slate"] .example-content > div {
+    margin: 10px 0;
+}
+
+[data-md-color-scheme="slate"] .example-content .example-path {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #404040;
+    margin-bottom: 10px;
+}
+
+[data-md-color-scheme="slate"] .example-content code {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Hide all ::before and ::after pseudo-elements in example sections */
+.example-section::before,
+.example-section::after,
+.example-section summary::before,
+.example-section summary::after,
+.example-section details::before,
+.example-section details::after {
+    display: none !important;
+    content: none !important;
 }
