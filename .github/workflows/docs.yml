@@ -38,7 +38,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -e ".[docs]"
+          pip install mkdocs>=1.6.0 mkdocs-material>=9.5.0 pymdown-extensions>=10.11.0
 
       - name: Build documentation with mkdocs
         run: mkdocs build
