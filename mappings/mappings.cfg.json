@@ -1,6 +1,9 @@
 {
-    "3.42.0": ["summary"],
-    "3.39.0": ["magnetics", "pf_active", "pf_passive", "tf", "wall"],
-    "3.37": ["magnetics", "pf_active", "pf_passive", "tf", "wall"],
-    "3.34": ["pf_active"]
+    "metadata": {
+        "experiment": "mastu",
+        "author": "Adam Parker and the gang",
+        "version": "0.1.0"
+    },
+    "partitions": [],
+    "groups": ["magnetics", "pf_active", "pf_passive", "wall", "tf", "equilibrium"]
 }

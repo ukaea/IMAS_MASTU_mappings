@@ -1,33 +1,59 @@
-name: ci 
+name: Deploy Documentation to GitHub Pages
+
 on:
   push:
     branches:
       - develop
+  workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
+          python-version: '3.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
+          key: mkdocs-material-${{ hashFiles('pyproject.toml') }}
+          path: ~/.cache/pip
           restore-keys: |
             mkdocs-material-
-      - name: Generate index 0 mapping files
+
+      - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y build-essential
-          g++ --version
-          g++ -std=c++17 ./utils/gen_docs/cpp_gen_ids/run.cpp
-          ./a.out
-      - name: Create HTML tables from mapping JSON
-        run: python3 ./utils/gen_docs/gen_table_manual.py
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+          pip install mkdocs>=1.6.0 mkdocs-material>=9.5.0 pymdown-extensions>=10.11.0
+
+      - name: Build documentation with mkdocs
+        run: mkdocs build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

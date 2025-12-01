@@ -1,103 +1,77 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "coil": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(PF_COILS) }}"
-    },
-    "coil[#]/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PF_NAME }}"
-    },
-    "coil[#]/identifier" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "PF_COIL_{{ indices.0 + 1 }}"
-    },
-    "coil[#]/current" : {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+    "ids_properties/homogeneous_time": 0,
+    "coil": "{{ length(PF_COILS) }}",
+    "coil[#]/name": "{{ PF_NAME }}",
+    "coil[#]/identifier": "PF_COIL_{{ #0 + 1 }}",
+    "coil[#]/current/data" : {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
-            "signal": "/AMC/ROGEXT/{{ PF_NAME }}"
+            "signal": "/AMC/ROGEXT/{{ PF_NAME }}",
+            "function": "pf_coil_current"
         },
-        "FUNCTION": "pf_coil_current",
         "SCALE": "{{ UNIT_SF }}"
     },
     "coil[#]/current/time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
         "ARGS": {
-            "signal": "/AMC/ROGEXT/{{ PF_NAME }}"
+            "signal": "/AMC/ROGEXT/{{ PF_NAME }}",
+            "time": true
         }
     },
-    "coil[#]/function": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "coil[#]/function[#]/index": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ FUNCTION }}"
-    },
+    "coil[#]/function": 1,
+    "coil[#]/function[#]/index": "{{ FUNCTION }}",
     "coil[#]/element" : {
         "MAP_TYPE": "DIMENSION",
         "DIM_PROBE": "_coil[#]/element[#]/geometry/rectangle/size"
     },
     "_coil[#]/element[#]/geometry/rectangle/size": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dR"
         }
     },
-    "coil[#]/element[#]/identifier" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "C{{ indices.0 + 1 }}_E{{ indices.1 + 1 }}"
-    },
-    "coil[#]/element[#]/turns_with_sign" : {
-    "MAP_TYPE": "VALUE",
-    "VALUE": 1.0
-    },
-    "coil[#]/element[#]/geometry/geometry_type": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2
-    },       
+    "coil[#]/element[#]/identifier" : "C{{ #0 + 1 }}_E{{ #1 + 1 }}",
+    "coil[#]/element[#]/turns_with_sign" : 1.0,
+    "coil[#]/element[#]/geometry/geometry_type": 2,
     "coil[#]/element[#]/geometry/rectangle/width": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dR"
         },
-        "SLICE": "[{{ indices.1 }}]"
+        "SLICE": "[{{ #1 }}]"
     },
     "coil[#]/element[#]/geometry/rectangle/height": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.dZ"
         },
-        "SLICE": "[{{ indices.1 }}]"
+        "SLICE": "[{{ #1 }}]"
     },
     "coil[#]/element[#]/geometry/rectangle/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.centreR"
         },
-        "SLICE": "[{{ indices.1 }}]"
+        "SLICE": "[{{ #1 }}]"
     },
     "coil[#]/element[#]/geometry/rectangle/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "GEOMETRY",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "GEOMETRY",
         "ARGS": {
             "signal": "/magnetics/pfcoil/{{ PF_GEOM_NAME }}",
             "key": "geom_elements.centreZ"
         },
-        "SLICE": "[{{ indices.1 }}]"
+        "SLICE": "[{{ #1 }}]"
     },
     "coil[#]/element[#]/area": {
         "MAP_TYPE": "EXPR",
@@ -107,50 +81,49 @@
         },
         "EXPR": "WIDTH*HEIGHT"
     },
-    "circuit" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(PF_SUPPLIES) }}"
-    },
-    "circuit[#]/name" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "CIRCUIT_{{ PF_PS_NAME }}"
-    },
-    "circuit[#]/identifier" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "CIRCUIT_{{ indices.0 + 1 }}"
-    },
+    "circuit": "{{ length(PF_SUPPLIES) }}",
+    "circuit[#]/name" : "CIRCUIT_{{ PF_PS_NAME }}",
+    "circuit[#]/identifier": "CIRCUIT_{{ #0 + 1 }}",
     "circuit[#]/connections" : {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_MASTU",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_MASTU",
         "ARGS": {
-            "ps_name": "{{ PF_PS_NAME }}"
-        },
-        "FUNCTION": "pf_conn_matrix"
-    },
-    "supply" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(PF_SUPPLIES) }}"
-    },
-    "supply[#]/name" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PF_PS_NAME }}"
-    },
-    "supply[#]/identifier" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "SUPPLY_{{ indices.0 + 1 }}"
-    },
-    "supply[#]/current" : {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
-            "signal": "{{ SUPPLY_CURRENT_NAME }}"
+            "signal": "{{ PF_PS_NAME }}",
+            "function": "pf_conn_matrix"
         }
     },
-    "supply[#]/voltage" : {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
+    "supply": "{{ length(PF_SUPPLIES) }}",
+    "supply[#]/name": "{{ PF_PS_NAME }}",
+    "supply[#]/identifier": "SUPPLY_{{ #0 + 1 }}",
+    "supply[#]/current/data": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
+        "ARGS": {
+            "signal": "{{ SUPPLY_CURRENT_NAME }}"
+        },
+        "SCALE": "{{ UNIT_SF }}"
+    },
+    "supply[#]/current/time": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
+        "ARGS": {
+            "signal": "{{ SUPPLY_CURRENT_NAME }}",
+            "time": true
+        }
+    },
+    "_supply[#]/voltage/data": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "{{ SUPPLY_VOLTAGE_NAME }}"
+        }
+    },
+    "_supply[#]/voltage/time": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
+        "ARGS": {
+            "signal": "{{ SUPPLY_VOLTAGE_NAME }}",
+            "time": true
         }
     }
 }

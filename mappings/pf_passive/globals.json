@@ -1,7 +1,7 @@
 {
     "DESCRIPTION": "Global naming conventions and templating parameters for pf_passive IDS",
-    "PASSIVE_NAME": "{{ at(LOOPS, indices.0).NAME }}",
-    "PASSIVE_CURRENT": "{{ at(LOOPS, indices.0).CURRENT }}",
+    "PASSIVE_NAME": "{{ LOOPS[#0].NAME }}",
+    "PASSIVE_CURRENT": "{% if existsIn(at(LOOPS, indices.0), \"CURRENT\") %}{{ at(LOOPS, indices.0).CURRENT }}{% else %}void{% endif %}",
     "LOOPS": [
         {
             "NAME": "centrecolumn"
@@ -43,7 +43,7 @@
         },
         {
             "NAME": "d2_case_lower",
-            "CURRENT": "/AMC/CASECURR/D2U"
+            "CURRENT": "/AMC/CASECURR/D2L"
         },
         {
             "NAME": "d2_case_upper",
@@ -51,7 +51,7 @@
         },
         {
             "NAME": "d3_case_lower",
-            "CURRENT": "/AMC/CASECURR/D3U"
+            "CURRENT": "/AMC/CASECURR/D3L"
         },
         {
             "NAME": "d3_case_upper",
@@ -59,7 +59,7 @@
         },
         {
             "NAME": "d5_case_lower",
-            "CURRENT": "/AMC/CASECURR/D5U"
+            "CURRENT": "/AMC/CASECURR/D5L"
         },
         {
             "NAME": "d5_case_upper",
@@ -67,7 +67,7 @@
         },
         {
             "NAME": "d6_case_lower",
-            "CURRENT": "/AMC/CASECURR/D6U"
+            "CURRENT": "/AMC/CASECURR/D6L"
         },
         {
             "NAME": "d6_case_upper",
@@ -75,7 +75,7 @@
         },
         {
             "NAME": "d7_case_lower",
-            "CURRENT": "/AMC/CASECURR/D7U"
+            "CURRENT": "/AMC/CASECURR/D7L"
         },
         {
             "NAME": "d7_case_upper",
@@ -89,7 +89,7 @@
         },
         {
             "NAME": "dp_case_lower",
-            "CURRENT": "/AMC/CASECURR/DPU"
+            "CURRENT": "/AMC/CASECURR/DPL"
         },
         {
             "NAME": "dp_case_upper",

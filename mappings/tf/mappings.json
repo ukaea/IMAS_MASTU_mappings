@@ -1,15 +1,19 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "b_field_tor_vacuum_r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
+    "ids_properties/homogeneous_time": 0,
+    "b_field_tor_vacuum_r/data": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
         "ARGS": {
             "signal": "/AMC/ROGEXT/TF"
         },
-        "SCALE": 0.0048,
-        "COMMENT": "From Ampere's law at r=1metre, takes into account the number of TF coils"
+        "SCALE": 0.0048
+    },
+    "b_field_tor_vacuum_r/time": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "UDA",
+        "ARGS": {
+            "signal": "/AMC/ROGEXT/TF",
+            "time": true
+        }
     }
 }

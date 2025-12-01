@@ -14,13 +14,16 @@ copyright: Copyright &copy; 2022-2024 Adam Parker
 extra_css:
   - stylesheets/extra.css
 
+hooks:
+  - docs/hooks/gen_mapping_docs.py
+
 theme:
   name: material
   # custom_dir: material/.overrides
   features:
     - announce.dismiss
-    - content.action.edit
-    - content.action.view
+    # - content.action.edit
+    # - content.action.view
     - content.code.annotate
     - content.code.copy
     # - content.code.select
