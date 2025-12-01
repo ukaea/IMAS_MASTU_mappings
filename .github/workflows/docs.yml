@@ -3,8 +3,7 @@ name: Deploy Documentation to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - feature/libtokamap-update
+      - develop
   workflow_dispatch:
 
 permissions:
