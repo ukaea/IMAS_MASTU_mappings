@@ -1,315 +1,320 @@
 {
     "ids_properties/homogeneous_time": 0,
     "time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/TIME"
         }
     },
     "vacuum_toroidal_field/r0": 0.8,
     "_vacuum_toroidal_field/bvacradprod": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/INPUT/BVACRADIUSPRODUCT"
         }
     },
     "vacuum_toroidal_field/b0": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/INPUT/BVACRADIUSPRODUCT"
         },
-        "SCALE": 1.25
+        "scale": 1.25
     },
     "time_slice": {
-        "MAP_TYPE": "DIMENSION",
+        "map_type": "DIMENSION",
         "DIM_PROBE": "time"
     },
     "time_slice[#]/global_quantities/beta_tor": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/beta_normal": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BETAN"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/ip": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/li_3": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/LI3"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/volume": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/area": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/POLOIDALAREA"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/psi_axis": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PSIAXIS"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]",
+        "scale": -6.283185307
     },
     "time_slice[#]/global_quantities/psi_boundary": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PSIBOUNDARY"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]",
+        "scale": -6.283185307
     },
     "time_slice[#]/global_quantities/magnetic_axis/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/MAGNETICAXIS/R"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/magnetic_axis/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/MAGNETICAXIS/Z"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/magnetic_axis/b_field_tor": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BPHIRMAG"
         },
-        "SLICE": "[{{ #0 }}]",
+        "slice": "[{{ #0 }}]",
         "COMMENT": "DUPLICATE DDVersion differences"
     },
     "_time_slice[#]/global_quantities/magnetic_axis/b_field_phi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BPHIRMAG"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/current_centre/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/CURRENTCENTROID/R"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/current_centre/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/CURRENTCENTROID/Z"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/q_min/value": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/QMIN"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/q_95": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/Q95"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/energy_mhd": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/global_quantities/plasma_inductance": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/LI3"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/type": {
         "COMMENT": "May need changing, values are 0,1,2",
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/DNDXPOINTCOUNT"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/outline/r": {
         "COMMENT": "Is this 2D, slice to get vector at time slice?",
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/RBOUNDARY"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/boundary_separatrix/outline/z": {
         "COMMENT": "Is this 2D, slice to get vector at time slice?",
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ZBOUNDARY"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/boundary_separatrix/psi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PSIBOUNDARY"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]",
+        "scale": -6.283185307
     },
     "time_slice[#]/boundary_separatrix/geometric_axis/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/RGEOM"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/geometric_axis/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ZGEOM"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/elongation": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/triangularity_upper": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/triangularity_lower": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/x_point": {
-        "MAP_TYPE": "VALUE",
+        "map_type": "VALUE",
         "VALUE": 2
     },
     "time_slice[#]/boundary_separatrix/x_point[#]/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ at(X_POINT_R, #1) }}"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/x_point[#]/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ at(X_POINT_Z, #1) }}"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/strike_point": {
-        "MAP_TYPE": "VALUE",
+        "map_type": "VALUE",
         "VALUE": "{{ length(STRIKE_POINT_R) }}"
     },
     "time_slice[#]/boundary_separatrix/strike_point[#]/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ STRIKE_POINT_R[#1] }}"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/strike_point[#]/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/SEPARATRIXGEOMETRY/{{ STRIKE_POINT_Z[#1] }}"
         },
-        "SLICE": "[{{ #0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "_time_slice[#]/boundary_separatrix/gap": {
-        "MAP_TYPE": "VALUE",
+        "map_type": "VALUE",
         "COMMENT": "ADAM to do all gap stuff from pulse schedule",
         "VALUE": 0
     },
     "time_slice[#]/profiles_1d/psi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/POLOIDALFLUX"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]",
+        "scale": -6.283185307
     },
     "time_slice[#]/profiles_1d/phi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/TOROIDALFLUX"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]",
+        "scale": 6.283185307
     },
     "time_slice[#]/profiles_1d/pressure": {
-        "MAP_TYPE": "EXPR",
+        "map_type": "EXPR",
         "PARAMETERS": {
             "X": "_time_slice[#]/profiles_1d/static_pressure",
             "Y": "_time_slice[#]/profiles_1d/rotational_pressure"
@@ -317,137 +322,138 @@
         "EXPR": "X + Y"
     },
     "_time_slice[#]/profiles_1d/static_pressure": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/STATICPRESSURE"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "_time_slice[#]/profiles_1d/rotational_pressure": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROTATIONALPRESSURE"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/f": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/RBPHI"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/dpressure_dpsi": {
-        "MAP_TYPE": "EXPR",
+        "map_type": "EXPR",
         "PARAMETERS": {
             "X": "_time_slice[#]/profiles_1d/static_pprime",
             "Y": "_time_slice[#]/profiles_1d/rotational_pprime"
         },
-        "EXPR": "X + Y"
+        "EXPR": "-0.159154943 * (X + Y)"
     },
     "_time_slice[#]/profiles_1d/static_pprime": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/STATICPPRIME"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "_time_slice[#]/profiles_1d/rotational_pprime": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROTATIONALPPRIME"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/f_df_dpsi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/FFPRIME"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]",
+        "scale": "-0.159154943"
     },
     "time_slice[#]/profiles_1d/j_tor": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/JAVRG"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/q": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/Q"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/r_inboard": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/RINBOARD"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/r_outboard": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROUTBOARD"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "_time_slice[#]/profiles_1d/rho_tor": {
-        "MAP_TYPE": "VALUE",
+        "map_type": "VALUE",
         "COMMENT": "Implement expression sqrt(phi/(pi*b0))",
         "VALUE": 0
     },
     "time_slice[#]/profiles_1d/elongation": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ELONGATION"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/triangularity_upper": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/UPPERTRIANGULARITY"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/triangularity_lower": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/LOWERTRIANGULARITY"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/volume": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/PLASMAFLUXVOLUME"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_1d/area": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/POLOIDALFLUXAREA"
         },
-        "SLICE": "[{{ #0 }}][:]"
+        "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/profiles_2d": 1,
     "time_slice[#]/profiles_2d[#]/type/name": "total",
@@ -455,57 +461,58 @@
     "time_slice[#]/profiles_2d[#]/grid_type/name": "rectangular",
     "time_slice[#]/profiles_2d[#]/grid_type/index": 1,
     "time_slice[#]/profiles_2d[#]/grid/dim1": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/R"
         }
     },
     "time_slice[#]/profiles_2d[#]/grid/dim2": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/Z"
         }
     },
     "time_slice[#]/profiles_2d[#]/psi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/POLOIDALFLUX"
         },
-        "SLICE": "[{{ #0 }}][:][:]"
+        "slice": "[{{ #0 }}][:][:]",
+        "scale": -6.283185307
     },
     "time_slice[#]/profiles_2d[#]/j_tor": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/JPHI"
         },
-        "SLICE": "[{{ #0 }}][:][:]"
+        "slice": "[{{ #0 }}][:][:]"
     },
     "time_slice[#]/profiles_2d[#]/b_field_r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/BR"
         },
-        "SLICE": "[{{ #0 }}][:][:]"
+        "slice": "[{{ #0 }}][:][:]"
     },
     "time_slice[#]/profiles_2d[#]/b_field_z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/BZ"
         },
-        "SLICE": "[{{ #0 }}][:][:]"
+        "slice": "[{{ #0 }}][:][:]"
     },
     "time_slice[#]/profiles_2d[#]/b_field_tor": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/BPHI"
         },
-        "SLICE": "[{{ #0 }}][:][:]"
+        "slice": "[{{ #0 }}][:][:]"
     }
 }
