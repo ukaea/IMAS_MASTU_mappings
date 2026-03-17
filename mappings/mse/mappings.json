@@ -1,39 +1,33 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
+    "ids_properties/homogeneous_time": 0,
+    "channel": {
+        "map_type": "DIMENSION",
+        "dim_probe": "channel[#]/active_spatial_resolution[#]/centre/r"
     },
-    "channel/Shape_of": {
-        "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "channel[#]/active_spatial_resolution[#]/centre/r"
-    },
-    "channel[#]/active_spatial_resolution/Shape_of": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
+    "channel[#]/active_spatial_resolution": 1,
     "channel[#]/active_spatial_resolution[#]/centre/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "AMS/GEOMETRY/RADIUS"
         }
     },
     "channel[#]/active_spatial_resolution[#]/centre/z": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0.0
+        "map_type": "VALUE",
+        "value": 0.0
     },
     "channel[#]/active_spatial_resolution[#]/centre/phi": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0.0
+        "map_type": "VALUE",
+        "value": 0.0
     },
-    "channel[#]/active_spatial_resolution[#]/geometric_coefficients": {
-        "MAP_TYPE": "CUSTOM",
-        "CUSTOM_TYPE": "A_COEFFICIENTS"
+    "_channel[#]/active_spatial_resolution[#]/geometric_coefficients": {
+        "map_type": "VALUE",
+        "value": 0.0
     },
     "_polarisation_angle": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "AMS/GAMMA/POLARISATION_ANGLE"
         }
     }

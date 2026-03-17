@@ -7,17 +7,17 @@
     "description_2d[#]/limiter/unit": 1,
     "description_2d[#]/limiter/unit[#]/closed": 1,
     "description_2d[#]/limiter/unit[#]/outline/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "/limiter/efit",
             "key": "R"
         }
     },
     "description_2d[#]/limiter/unit[#]/outline/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "/limiter/efit",
             "key": "Z"
         }

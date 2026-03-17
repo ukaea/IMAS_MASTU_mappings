@@ -3,45 +3,45 @@
     "loop": "{{ length(LOOPS) }}",
     "loop[#]/name": "{{ PASSIVE_NAME }}",
     "loop[#]/resistance": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "resistance"
         }
     },
     "loop[#]/resistivity": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "resistivity"
         }
     },
     "loop[#]/current": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "{{ PASSIVE_CURRENT }}"
         },
-        "SCALE": "{{ UNIT_SF }}"
+        "scale": "{{ UNIT_SF }}"
     },
     "loop[#]/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "{{ PASSIVE_CURRENT }}",
             "time": true
         }
     },
     "loop[#]/element": {
-        "MAP_TYPE": "DIMENSION",
+        "map_type": "DIMENSION",
         "DIM_PROBE": "_loop[#]/element[#]/n_elements"
     },
     "_loop[#]/element[#]/n_elements": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "centreR"
         }
@@ -49,9 +49,9 @@
     "loop[#]/element[#]/name": "{{ PASSIVE_NAME }}_E{{ #1 + 1 }}",
     "loop[#]/element[#]/identifier": "{{ PASSIVE_NAME }}_L{{ #0 + 1 }}_E{{ #1 + 1 }}",
     "loop[#]/element[#]/geometry/geometry_type": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "geometry_type",
             "element": "{{ #1 }}",
@@ -59,9 +59,9 @@
         }
     },
     "loop[#]/element[#]/geometry/rectangle/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.centreR",
             "element": "{{ #1 }}",
@@ -69,9 +69,9 @@
         }
     },
     "loop[#]/element[#]/geometry/rectangle/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.centreZ",
             "element": "{{ #1 }}",
@@ -79,9 +79,9 @@
         }
     },
     "loop[#]/element[#]/geometry/rectangle/width": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.dR",
             "element": "{{ #1 }}",
@@ -89,9 +89,9 @@
         }
     },
     "loop[#]/element[#]/geometry/rectangle/height": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "rectangle.dZ",
             "element": "{{ #1 }}",
@@ -99,9 +99,9 @@
         }
     },
     "loop[#]/element[#]/geometry/oblique/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.centreR",
             "element": "{{ #1 }}",
@@ -109,9 +109,9 @@
         }
     },
     "loop[#]/element[#]/geometry/oblique/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.centreZ",
             "element": "{{ #1 }}",
@@ -119,9 +119,9 @@
         }
     },
     "loop[#]/element[#]/geometry/oblique/length_alpha": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.dR",
             "element": "{{ #1 }}",
@@ -129,9 +129,9 @@
         }
     },
     "loop[#]/element[#]/geometry/oblique/length_beta": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.dZ",
             "element": "{{ #1 }}",
@@ -139,9 +139,9 @@
         }
     },
     "loop[#]/element[#]/geometry/oblique/alpha": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.shapeAngle1",
             "element": "{{ #1 }}",
@@ -149,9 +149,9 @@
         }
     },
     "loop[#]/element[#]/geometry/oblique/beta": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_MASTU",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_MASTU",
+        "args": {
             "signal": "/passive/efit/{{ PASSIVE_NAME }}",
             "key": "oblique.shapeAngle2",
             "element": "{{ #1 }}",
