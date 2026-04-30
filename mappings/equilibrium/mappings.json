@@ -25,7 +25,7 @@
     },
     "time_slice": {
         "map_type": "DIMENSION",
-        "DIM_PROBE": "time"
+        "dim_probe": "time"
     },
     "time_slice[#]/global_quantities/beta_tor": {
         "map_type": "DATA_SOURCE",
@@ -116,7 +116,7 @@
             "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BPHIRMAG"
         },
         "slice": "[{{ #0 }}]",
-        "COMMENT": "DUPLICATE DDVersion differences"
+        "comment": "DUPLICATE DDVersion differences"
     },
     "_time_slice[#]/global_quantities/magnetic_axis/b_field_phi": {
         "map_type": "DATA_SOURCE",
@@ -175,7 +175,7 @@
         "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/type": {
-        "COMMENT": "May need changing, values are 0,1,2",
+        "comment": "May need changing, values are 0,1,2",
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
@@ -184,7 +184,7 @@
         "slice": "[{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/outline/r": {
-        "COMMENT": "Is this 2D, slice to get vector at time slice?",
+        "comment": "Is this 2D, slice to get vector at time slice?",
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
@@ -193,7 +193,7 @@
         "slice": "[{{ #0 }}][:]"
     },
     "time_slice[#]/boundary_separatrix/outline/z": {
-        "COMMENT": "Is this 2D, slice to get vector at time slice?",
+        "comment": "Is this 2D, slice to get vector at time slice?",
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
@@ -252,7 +252,7 @@
     },
     "time_slice[#]/boundary_separatrix/x_point": {
         "map_type": "VALUE",
-        "VALUE": 2
+        "value": 2
     },
     "time_slice[#]/boundary_separatrix/x_point[#]/r": {
         "map_type": "DATA_SOURCE",
@@ -272,7 +272,7 @@
     },
     "time_slice[#]/boundary_separatrix/strike_point": {
         "map_type": "VALUE",
-        "VALUE": "{{ length(STRIKE_POINT_R) }}"
+        "value": "{{ length(STRIKE_POINT_R) }}"
     },
     "time_slice[#]/boundary_separatrix/strike_point[#]/r": {
         "map_type": "DATA_SOURCE",
@@ -292,8 +292,8 @@
     },
     "_time_slice[#]/boundary_separatrix/gap": {
         "map_type": "VALUE",
-        "COMMENT": "ADAM to do all gap stuff from pulse schedule",
-        "VALUE": 0
+        "comment": "ADAM to do all gap stuff from pulse schedule",
+        "value": 0
     },
     "time_slice[#]/profiles_1d/psi": {
         "map_type": "DATA_SOURCE",
@@ -315,11 +315,11 @@
     },
     "time_slice[#]/profiles_1d/pressure": {
         "map_type": "EXPR",
-        "PARAMETERS": {
+        "parameters": {
             "X": "_time_slice[#]/profiles_1d/static_pressure",
             "Y": "_time_slice[#]/profiles_1d/rotational_pressure"
         },
-        "EXPR": "X + Y"
+        "expr": "X + Y"
     },
     "_time_slice[#]/profiles_1d/static_pressure": {
         "map_type": "DATA_SOURCE",
@@ -347,11 +347,11 @@
     },
     "time_slice[#]/profiles_1d/dpressure_dpsi": {
         "map_type": "EXPR",
-        "PARAMETERS": {
+        "parameters": {
             "X": "_time_slice[#]/profiles_1d/static_pprime",
             "Y": "_time_slice[#]/profiles_1d/rotational_pprime"
         },
-        "EXPR": "-0.159154943 * (X + Y)"
+        "expr": "-0.159154943 * (X + Y)"
     },
     "_time_slice[#]/profiles_1d/static_pprime": {
         "map_type": "DATA_SOURCE",
@@ -412,8 +412,8 @@
     },
     "_time_slice[#]/profiles_1d/rho_tor": {
         "map_type": "VALUE",
-        "COMMENT": "Implement expression sqrt(phi/(pi*b0))",
-        "VALUE": 0
+        "comment": "Implement expression sqrt(phi/(pi*b0))",
+        "value": 0
     },
     "time_slice[#]/profiles_1d/elongation": {
         "map_type": "DATA_SOURCE",

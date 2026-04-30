@@ -36,7 +36,7 @@
     },
     "loop[#]/element": {
         "map_type": "DIMENSION",
-        "DIM_PROBE": "_loop[#]/element[#]/n_elements"
+        "dim_probe": "_loop[#]/element[#]/n_elements"
     },
     "_loop[#]/element[#]/n_elements": {
         "map_type": "DATA_SOURCE",

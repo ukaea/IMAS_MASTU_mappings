@@ -1,17 +1,17 @@
 {
     "ids_properties/homogeneous_time": 0,
     "b_field_tor_vacuum_r/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMC/ROGEXT/TF"
         },
-        "SCALE": 0.0048
+        "scale": 0.0048
     },
     "b_field_tor_vacuum_r/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMC/ROGEXT/TF",
             "time": true
         }

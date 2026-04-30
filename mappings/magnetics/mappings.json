@@ -141,11 +141,11 @@
     },
     "b_field_pol_probe[#]/poloidal_angle": {
         "map_type": "EXPR",
-        "PARAMETERS": {
+        "parameters": {
             "Z": "_temp/pickup[#]/unit_vector/z",
             "R": "_temp/pickup[#]/unit_vector/r"
         },
-        "EXPR": "mod(2*PI-atan2(Z,R), 2*PI)"
+        "expr": "mod(2*PI-atan2(Z,R), 2*PI)"
     },
     "b_field_pol_probe[#]/toroidal_angle": {
         "map_type": "DATA_SOURCE",
@@ -235,11 +235,11 @@
     },
     "b_field_phi_probe[#]/poloidal_angle": {
         "map_type": "EXPR",
-        "PARAMETERS": {
+        "parameters": {
             "Z": "_temp/pickup_phi[#]/unit_vector/z",
             "R": "_temp/pickup_phi[#]/unit_vector/r"
         },
-        "EXPR": "mod(2*PI-atan2(Z,R), 2*PI)"
+        "expr": "mod(2*PI-atan2(Z,R), 2*PI)"
     },
     "b_field_phi_probe[#]/toroidal_angle": {
         "map_type": "DATA_SOURCE",
