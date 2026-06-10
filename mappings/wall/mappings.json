@@ -1,5 +1,6 @@
 {
     "ids_properties/homogeneous_time": 2,
+    "ids_properties/version_put/data_dictionary": "3.42.0",
     "description_2d": 1,
     "description_2d[#]/type/name": "Equilibrium codes",
     "description_2d[#]/type/index": 0,

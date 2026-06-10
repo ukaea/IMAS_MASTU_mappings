@@ -1,5 +1,6 @@
 {
     "ids_properties/homogeneous_time": 0,
+    "ids_properties/version_put/data_dictionary": "3.42.0",
     "coil": "{{ length(PF_COILS) }}",
     "coil[#]/name": "{{ PF_NAME }}",
     "coil[#]/identifier": "PF_COIL_{{ #0 + 1 }}",
