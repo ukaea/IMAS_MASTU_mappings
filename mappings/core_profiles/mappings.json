@@ -18,7 +18,7 @@
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
-            "signal": "/AGA/HM12",
+            "signal": "/AGA/HM12"
         },
         "slice": "[{{ #0 }}]"
     }
