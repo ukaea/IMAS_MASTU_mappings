@@ -1,5 +1,5 @@
 {
-    "ids_properties/homogeneous_time": 0,
+    "ids_properties/homogeneous_time": 1,
     "ids_properties/version_put/data_dictionary": "3.42.0",
     "time": {
         "map_type": "DATA_SOURCE",
