@@ -1,0 +1,20 @@
+{
+    "ids_properties/homogeneous_time": 0,
+    "ids_properties/version_put/data_dictionary": "3.42.0",
+    "pipe": 1,
+    "pipe[#]/flow_rate/data": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/XDC/GAS/F/HFS_MID_U02"
+        }
+    },
+    "pipe[#]/flow_rate/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/XDC/GAS/F/HFS_MID_U02",
+            "time": true
+        }
+    }
+}
