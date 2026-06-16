@@ -1,7 +1,7 @@
 {
     "ids_properties/homogeneous_time": 0,
     "ids_properties/version_put/data_dictionary": "3.42.0",
-    "b_field_tor_vacuum_r/data": {
+    "b_field_phi_vacuum_r/data": {
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
@@ -9,7 +9,7 @@
         },
         "scale": 0.0048
     },
-    "b_field_tor_vacuum_r/time": {
+    "b_field_phi_vacuum_r/time": {
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
