@@ -10,12 +10,12 @@
         }
     },
     "gauge": "{{ length(FIG_PROBES) }}",
-    "gauge[#]/name": "HM12",
+    "gauge[#]/name": "{{ FIG_PROBES[#0] }}",
     "gauge[#]/pressure/data": {
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
-            "signal": "/AGA/{{ at(FIG_PROBES, indices.0) }}"
+            "signal": "/AGA/{{ FIG_PROBES[#0] }}"
         }
     }
 }
