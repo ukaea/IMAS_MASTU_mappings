@@ -1,9 +1,9 @@
 {
     "metadata": {
         "experiment": "mastu",
-        "author": "Adam Parker and the gang",
-        "version": "0.2.0"
+        "author": "Lucy Kogan, Gabor Spezesi, and Adam Parker",
+        "version": "0.3.0"
     },
     "partitions": [],
-    "groups": ["magnetics", "pf_active", "pf_passive", "wall", "tf", "equilibrium", "gas_injection", "core_profiles"]
+    "groups": ["magnetics", "pf_active", "pf_passive", "wall", "tf", "equilibrium", "gas_injection", "barometry"]
 }
