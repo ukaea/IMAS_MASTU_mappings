@@ -1,0 +1,21 @@
+{
+    "ids_properties/homogeneous_time": 1,
+    "ids_properties/version_put/data_dictionary": "3.42.0",
+    "time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/AGA/time1",
+            "time": true
+        }
+    },
+    "gauge": "{{ length(FIG_PROBES) }}",
+    "gauge[#]/name": "HM12",
+    "gauge[#]/pressure/data": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/AGA/{{ at(FIG_PROBES, indices.0) }}"
+        }
+    }
+}
