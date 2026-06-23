@@ -1,0 +1,4 @@
+{
+    "DESCRIPTION": "Global naming conventions and templating parameters for barometry IDS",
+    "FIG_PROBES": ["HL11", "HM12", "HU08"]
+}

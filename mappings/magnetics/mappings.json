@@ -1,9 +1,10 @@
 {
     "ids_properties/homogeneous_time": 1,
+    "ids_properties/version_put/data_dictionary": "3.42.0",
     "time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMB/CTIME"
         }
     },
@@ -13,67 +14,68 @@
     "flux_loop[#]/type/name": "{{ FL_TYPE }}",
     "flux_loop[#]/type/index": "{{ FL_TYPE_MAP[FLUX_LOOPS[#0].TYPE] }}",
     "flux_loop[#]/position": {
-        "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "_flux_loop[#]/position_size"
+        "map_type": "DIMENSION",
+        "dim_probe": "_flux_loop[#]/position_size"
     },
     "_flux_loop[#]/position_size": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ FL_NAME }}",
             "key": "{{ FL_POSITION_MAP[FLUX_LOOPS[#0].TYPE] }}.r"
         }
     },
     "flux_loop[#]/position[#]/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ FL_NAME }}",
             "key": "{{ FL_POSITION_MAP[FLUX_LOOPS[#0].TYPE] }}.r"
         },
-        "SLICE": "[{{ #1 }}]"
+        "slice": "[{{ #1 }}]"
     },
     "flux_loop[#]/position[#]/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ FL_NAME }}",
             "key": "{{ FL_POSITION_MAP[FLUX_LOOPS[#0].TYPE] }}.z"
         },
-        "SLICE": "[{{ #1 }}]"
+        "slice": "[{{ #1 }}]"
     },
     "flux_loop[#]/position[#]/phi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ FL_PHI }}",
             "key": "coilPath.phi"
         },
-        "SLICE": "[{{ #1 }}]",
-        "SCALE": "{{ DEG2RAD }}"
+        "slice": "[{{ #1 }}]",
+        "scale": "{{ DEG2RAD }}"
     },
     "flux_loop[#]/flux/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMB/{{ FL_TYPE }}/{{ FL_NAME }}"
-        }
+        },
+        "scale": -1
     },
     "flux_loop[#]/voltage/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMB/LOOPV/{{ LOOPV_NAME }}"
         }
     },
     "ip": 1,
     "ip[#]/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMC/PLASMA_CURRENT"
         },
-        "SCALE": "{{ UNIT_SF }}"
+        "scale": "{{ UNIT_SF }}"
     },
     "ip[#]/method_name": "IP Rogowski measurement",
     "b_field_pol_probe": "{{ length(BPOL_PROBES) }}",
@@ -83,89 +85,89 @@
     "b_field_pol_probe[#]/type/index": 2,
     "b_field_pol_probe[#]/type/description": "Mirnov Probe",
     "b_field_pol_probe[#]/position/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "coordinate.r"
         }
     },
     "b_field_pol_probe[#]/position/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "coordinate.z"
         }
     },
     "b_field_pol_probe[#]/position/phi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "coordinate.phi"
         },
-        "SCALE": "{{ DEG2RAD }}"
+        "scale": "{{ DEG2RAD }}"
     },
     "b_field_pol_probe[#]/area": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "geometry.areaAve"
         }
     },
     "b_field_pol_probe[#]/length": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "geometry.length"
         }
     },
     "b_field_pol_probe[#]/turns": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "geometry.nturnsTotal"
         }
     },
     "b_field_pol_probe[#]/field/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMB/PICKUP/{{ BPOL_NAME }}"
         }
     },
     "b_field_pol_probe[#]/poloidal_angle": {
-        "MAP_TYPE": "EXPR",
-        "PARAMETERS": {
+        "map_type": "EXPR",
+        "parameters": {
             "Z": "_temp/pickup[#]/unit_vector/z",
             "R": "_temp/pickup[#]/unit_vector/r"
         },
-        "EXPR": "mod(2*PI-atan2(Z,R), 2*PI)"
+        "expr": "mod(2*PI-atan2(Z,R), 2*PI)"
     },
     "b_field_pol_probe[#]/toroidal_angle": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "orientation.unit_vector.phi"
         }
     },
     "_temp/pickup[#]/unit_vector/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "orientation.unit_vector.r"
         }
     },
     "_temp/pickup[#]/unit_vector/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPOL_NAME }}",
             "key": "orientation.unit_vector.z"
         }
@@ -177,89 +179,89 @@
     "b_field_phi_probe[#]/type/index": 2,
     "b_field_phi_probe[#]/type/description": "Mirnov Probe",
     "b_field_phi_probe[#]/position/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "coordinate.r"
         }
     },
     "b_field_phi_probe[#]/position/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "coordinate.z"
         }
     },
     "b_field_phi_probe[#]/position/phi": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "coordinate.phi"
         },
-        "SCALE": "{{ DEG2RAD }}"
+        "scale": "{{ DEG2RAD }}"
     },
     "b_field_phi_probe[#]/area": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "geometry.areaAve"
         }
     },
     "b_field_phi_probe[#]/length": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "geometry.length"
         }
     },
     "b_field_phi_probe[#]/turns": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "geometry.nturnsTotal"
         }
     },
     "b_field_phi_probe[#]/field/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/AMB/PICKUP/{{ BPHI_NAME }}"
         }
     },
     "b_field_phi_probe[#]/poloidal_angle": {
-        "MAP_TYPE": "EXPR",
-        "PARAMETERS": {
+        "map_type": "EXPR",
+        "parameters": {
             "Z": "_temp/pickup_phi[#]/unit_vector/z",
             "R": "_temp/pickup_phi[#]/unit_vector/r"
         },
-        "EXPR": "mod(2*PI-atan2(Z,R), 2*PI)"
+        "expr": "mod(2*PI-atan2(Z,R), 2*PI)"
     },
     "b_field_phi_probe[#]/toroidal_angle": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "orientation.unit_vector.phi"
         }
     },
     "_temp/pickup_phi[#]/unit_vector/r": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "orientation.unit_vector.r"
         }
     },
     "_temp/pickup_phi[#]/unit_vector/z": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "GEOMETRY",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "GEOMETRY",
+        "args": {
             "signal": "{{ BPHI_NAME }}",
             "key": "orientation.unit_vector.z"
         }

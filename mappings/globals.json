@@ -3,23 +3,23 @@
     "COMMENT_2": "DATA_SOURCE_CONFIG defines the mandatory arguments for each plugin request",
     "DEG2RAD": 0.0174532925199,
     "UNIT_SF": 1000,
-    "DATA_SOURCE_CONFIG": {
+    "data_source_config": {
         "UDA": {
-            "ARGS": {
+            "args": {
                 "source": "{{ shot }}",
                 "host": "uda2.hpc.l",
                 "port": "56565"
             }
         },
         "GEOMETRY": {
-            "ARGS": {
+            "args": {
                 "source": "{{ shot }}",
-                "host": "uda2.hpc.l",
-                "port": "56565"
+                "geom_host": "uda2.hpc.l",
+                "geom_port": "56565"
             }
         },
         "CUSTOM_MASTU": {
-            "ARGS": {
+            "args": {
                 "source": "{{ shot }}",
                 "host": "uda2.hpc.l",
                 "port": "56565"
