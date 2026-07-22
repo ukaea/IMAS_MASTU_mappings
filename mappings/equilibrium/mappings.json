@@ -110,16 +110,7 @@
         },
         "slice": "[{{ #0 }}]"
     },
-    "time_slice[#]/global_quantities/magnetic_axis/b_field_tor": {
-        "map_type": "DATA_SOURCE",
-        "data_source": "UDA",
-        "args": {
-            "signal": "EPM/OUTPUT/GLOBALPARAMETERS/BPHIRMAG"
-        },
-        "slice": "[{{ #0 }}]",
-        "comment": "DUPLICATE DDVersion differences"
-    },
-    "_time_slice[#]/global_quantities/magnetic_axis/b_field_phi": {
+    "time_slice[#]/global_quantities/magnetic_axis/b_field_phi": {
         "map_type": "DATA_SOURCE",
         "data_source": "UDA",
         "args": {
@@ -314,7 +305,7 @@
         "slice": "[:][{{ #0 }}]",
         "scale": 6.283185307
     },
-    "_time_slice[#]/profiles_1d/pressure": {
+    "time_slice[#]/profiles_1d/pressure": {
         "map_type": "EXPR",
         "parameters": {
             "X": "_time_slice[#]/profiles_1d/static_pressure",
@@ -336,7 +327,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROTATIONALPRESSURE"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/f": {
         "map_type": "DATA_SOURCE",
@@ -346,7 +337,7 @@
         },
         "slice": "[:][{{ #0 }}]"
     },
-    "_time_slice[#]/profiles_1d/dpressure_dpsi": {
+    "time_slice[#]/profiles_1d/dpressure_dpsi": {
         "map_type": "EXPR",
         "parameters": {
             "X": "_time_slice[#]/profiles_1d/static_pprime",
