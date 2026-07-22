@@ -191,7 +191,7 @@
         "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/RBOUNDARY"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/outline/z": {
         "comment": "Is this 2D, slice to get vector at time slice?",
@@ -200,7 +200,7 @@
         "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ZBOUNDARY"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/boundary_separatrix/psi": {
         "map_type": "DATA_SOURCE",
@@ -302,7 +302,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/POLOIDALFLUX"
         },
-        "slice": "[{{ #0 }}][:]",
+        "slice": "[:][{{ #0 }}]",
         "scale": -6.283185307
     },
     "time_slice[#]/profiles_1d/phi": {
@@ -311,10 +311,10 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/TOROIDALFLUX"
         },
-        "slice": "[{{ #0 }}][:]",
+        "slice": "[:][{{ #0 }}]",
         "scale": 6.283185307
     },
-    "time_slice[#]/profiles_1d/pressure": {
+    "_time_slice[#]/profiles_1d/pressure": {
         "map_type": "EXPR",
         "parameters": {
             "X": "_time_slice[#]/profiles_1d/static_pressure",
@@ -328,7 +328,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/STATICPRESSURE"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "_time_slice[#]/profiles_1d/rotational_pressure": {
         "map_type": "DATA_SOURCE",
@@ -344,9 +344,9 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/RBPHI"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
-    "time_slice[#]/profiles_1d/dpressure_dpsi": {
+    "_time_slice[#]/profiles_1d/dpressure_dpsi": {
         "map_type": "EXPR",
         "parameters": {
             "X": "_time_slice[#]/profiles_1d/static_pprime",
@@ -360,7 +360,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/STATICPPRIME"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "_time_slice[#]/profiles_1d/rotational_pprime": {
         "map_type": "DATA_SOURCE",
@@ -368,7 +368,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROTATIONALPPRIME"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/f_df_dpsi": {
         "map_type": "DATA_SOURCE",
@@ -376,7 +376,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/FFPRIME"
         },
-        "slice": "[{{ #0 }}][:]",
+        "slice": "[:][{{ #0 }}]",
         "scale": "-0.159154943"
     },
     "time_slice[#]/profiles_1d/j_tor": {
@@ -385,7 +385,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/JAVRG"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/q": {
         "map_type": "DATA_SOURCE",
@@ -393,7 +393,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/Q"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/r_inboard": {
         "map_type": "DATA_SOURCE",
@@ -401,7 +401,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/RINBOARD"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/r_outboard": {
         "map_type": "DATA_SOURCE",
@@ -409,7 +409,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ROUTBOARD"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "_time_slice[#]/profiles_1d/rho_tor": {
         "map_type": "VALUE",
@@ -422,7 +422,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/ELONGATION"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/triangularity_upper": {
         "map_type": "DATA_SOURCE",
@@ -430,7 +430,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/UPPERTRIANGULARITY"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/triangularity_lower": {
         "map_type": "DATA_SOURCE",
@@ -438,7 +438,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/LOWERTRIANGULARITY"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/volume": {
         "map_type": "DATA_SOURCE",
@@ -446,7 +446,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/PLASMAFLUXVOLUME"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_1d/area": {
         "map_type": "DATA_SOURCE",
@@ -454,7 +454,7 @@
         "args": {
             "signal": "EPM/OUTPUT/FLUXFUNCTIONPROFILES/POLOIDALFLUXAREA"
         },
-        "slice": "[{{ #0 }}][:]"
+        "slice": "[:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_2d": 1,
     "time_slice[#]/profiles_2d[#]/type/name": "total",
@@ -481,7 +481,7 @@
         "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/POLOIDALFLUX"
         },
-        "slice": "[{{ #0 }}][:][:]",
+        "slice": "[:][:][{{ #0 }}]",
         "scale": -6.283185307
     },
     "time_slice[#]/profiles_2d[#]/j_tor": {
@@ -490,7 +490,7 @@
         "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/JPHI"
         },
-        "slice": "[{{ #0 }}][:][:]"
+        "slice": "[:][:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_2d[#]/b_field_r": {
         "map_type": "DATA_SOURCE",
@@ -498,7 +498,7 @@
         "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/BR"
         },
-        "slice": "[{{ #0 }}][:][:]"
+        "slice": "[:][:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_2d[#]/b_field_z": {
         "map_type": "DATA_SOURCE",
@@ -506,7 +506,7 @@
         "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/BZ"
         },
-        "slice": "[{{ #0 }}][:][:]"
+        "slice": "[:][:][{{ #0 }}]"
     },
     "time_slice[#]/profiles_2d[#]/b_field_tor": {
         "map_type": "DATA_SOURCE",
@@ -514,6 +514,6 @@
         "args": {
             "signal": "EPM/OUTPUT/PROFILES2D/BPHI"
         },
-        "slice": "[{{ #0 }}][:][:]"
+        "slice": "[:][:][{{ #0 }}]"
     }
 }
