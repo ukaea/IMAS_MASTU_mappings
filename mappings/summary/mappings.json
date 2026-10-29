@@ -1,217 +1,386 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
+    "ids_properties/homogeneous_time": 1,
     "time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+        "map_type": "PLUGIN",
+        "plugin": "UDA",
+        "args": {
             "signal": "/ESM/TIME"
         }
     },
-    "global_quantities/ip/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "_global_quantities/ip/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/INPUT/CONSTRAINTS/PLASMACURRENT/TARGET"
         }
     },
-    "global_quantities/ip/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/INPUT/CONSTRAINTS/PLASMACURRENT/TARGET"
+    "_global_quantities/ip/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/INPUT/CONSTRAINTS/PLASMACURRENT/TARGET",
+            "time": true
+        }
     },
-    "global_quantities/r0/value": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0.8
+    "global_quantities/ip/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/ip/value",
+        "base": "_global_quantities/ip/time",
+        "target": "time",
+        "type": "LINEAR"
     },
-    "global_quantities/b0/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/ip/source": "/EPM/INPUT/CONSTRAINTS/PLASMACURRENT/TARGET",
+    "global_quantities/r0/value": 0.8,
+    "global_quantities/r0/source": "Ask Lucy and Gabor",
+    "_global_quantities/b0/value": {
+        "map_type": "PLUGIN",
+        "plugin": "UDA",
+        "args": {
             "signal": "/EPM/INPUT/BVACRADIUSPRODUCT"
         },
-        "SCALE": 1.25,
-        "COMMENT": "Scaled by 1/r0, r0 hardcoded to be 0.8 --> 1.25"
+        "scale": 1.25,
+        "comment": "Scaled by 1/r0, r0 hardcoded to be 0.8 --> 1.25"
     },
-    "global_quantities/b0/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/INPUT/BVACRADIUSPRODUCT * r0 (1.25)"
+    "_global_quantities/b0/time": {
+        "map_type": "PLUGIN",
+        "plugin": "UDA",
+        "args": {
+            "signal": "/EPM/INPUT/BVACRADIUSPRODUCT",
+            "time": true
+        }
     },
-    "global_quantities/li/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/b0/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/b0/value",
+        "base": "_global_quantities/b0/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/b0/source": "/EPM/INPUT/BVACRADIUSPRODUCT * 1/r0 (1.25)",
+    "_global_quantities/li/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/LI3"
         }
     },
-    "global_quantities/li/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/GLOBALPARAMETERS/LI3"
+    "_global_quantities/li/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/LI3",
+            "time": true
+        }
     },
-    "global_quantities/q_95/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/li/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/li/value",
+        "base": "_global_quantities/li/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/li/source": "/EPM/OUTPUT/GLOBALPARAMETERS/LI3",
+    "_global_quantities/q_95/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/Q95"
         }
     },
-    "global_quantities/q_95/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/GLOBALPARAMETERS/Q95"
+    "_global_quantities/q_95/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/Q95",
+            "time": true
+        }
     },
-    "global_quantities/power_ohm/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/q_95/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/q_95/value",
+        "base": "_global_quantities/q_95/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/q_95/source": "/EPM/OUTPUT/GLOBALPARAMETERS/Q95",
+    "_global_quantities/power_ohm/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/ESM/POHM"
         }
     },
-    "global_quantities/power_ohm/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/ESM/POHM"
+    "_global_quantities/power_ohm/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/ESM/POHM",
+            "time": true
+        }
     },
-    "global_quantities/beta_tor_mhd/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/power_ohm/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/power_ohm/value",
+        "base": "_global_quantities/power_ohm/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/power_ohm/source": "/ESM/POHM",
+    "_global_quantities/beta_tor_mhd/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
         }
     },
-    "global_quantities/beta_tor_mhd/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT"
+    "_global_quantities/beta_tor_mhd/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT",
+            "time": true
+        }
     },
-    "global_quantities/beta_tor_norm/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/beta_tor_mhd/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/beta_tor_mhd/value",
+        "base": "_global_quantities/beta_tor_mhd/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/beta_tor_mhd/source": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAT",
+    "_global_quantities/beta_tor_norm/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAN"
         }
     },
-    "global_quantities/beta_tor_norm/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/GLOBALPARAMETERS/BETAN"
+    "_global_quantities/beta_tor_norm/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/BETAN",
+            "time": true
+        }
     },
+    "global_quantities/beta_tor_norm/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/beta_tor_norm/value",
+        "base": "_global_quantities/beta_tor_norm/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/beta_tor_norm/source": "/EPM/GLOBALPARAMETERS/BETAN",
     "_epmcurrent/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT"
         }
     },
+    "_epmcurrent/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT",
+            "time": true
+        }
+    },
+    "_epmcurrent/interp": {
+        "map_type": "INTERP",
+        "input": "_epmcurrent/value",
+        "base": "_epmcurrent/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
     "global_quantities/beta_pol_mhd/value": {
-        "MAP_TYPE": "EXPR",
-        "PARAMETERS": {
+        "map_type": "EXPR",
+        "parameters": {
             "wplasma": "global_quantities/energy_mhd/value",
-            "ip": "_epmcurrent/value",
+            "ip": "_epmcurrent/interp",
             "R0": "global_quantities/r0/value"
         },
-        "EXPR": "4 * (wplasma / 1.5) / (R0 * {{MU0VAL}} * ip * ip)"
+        "expr": "4 * (wplasma / 1.5) / (R0 * {{MU0VAL}} * ip * ip)"
     },
-    "global_quantities/beta_pol_mhd/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "4 int(p dV) = (wplasma / 1.5). Therefore, betap = 4 * (wplasma / 1.5) / (R0 * MU0VAL * ip^2). ip=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT, r0=0.8, wplasma=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
-    },
-    "global_quantities/energy_mhd/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/beta_pol_mhd/source": "4 int(p dV) = (wplasma / 1.5). Therefore, betap = 4 * (wplasma / 1.5) / (R0 * MU0VAL * ip^2). ip=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMACURRENT, r0=0.8, wplasma=/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY",
+    "_global_quantities/energy_mhd/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
         }
     },
-    "global_quantities/energy_mhd/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY"
+    "_global_quantities/energy_mhd/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY",
+            "time": true
+        }
     },
-    "global_quantities/volume/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/energy_mhd/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/energy_mhd/value",
+        "base": "_global_quantities/energy_mhd/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/energy_mhd/source": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAENERGY",
+    "_global_quantities/volume/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME"
         }
     },
-    "global_quantities/volume/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME"
+    "_global_quantities/volume/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME",
+            "time": true
+        }
     },
-    "boundary/elongation/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "global_quantities/volume/value": {
+        "map_type": "INTERP",
+        "input": "_global_quantities/volume/value",
+        "base": "_global_quantities/volume/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "global_quantities/volume/source": "/EPM/OUTPUT/GLOBALPARAMETERS/PLASMAVOLUME",
+    "_boundary/elongation/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION"
         }
     },
-    "boundary/elongation/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION"
+    "_boundary/elongation/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION",
+            "time": true
+        }
     },
-    "boundary/triangularity_upper/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "boundary/elongation/value": {
+        "map_type": "INTERP",
+        "input": "_boundary/elongation/value",
+        "base": "_boundary/elongation/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "boundary/elongation/source": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/ELONGATION",
+    "_boundary/triangularity_upper/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
         }
     },
-    "boundary/triangularity_upper/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY"
+    "_boundary/triangularity_upper/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY",
+            "time": true
+        }
     },
-    "boundary/triangularity_lower/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "boundary/triangularity_upper/value": {
+        "map_type": "INTERP",
+        "input": "_boundary/triangularity_upper/value",
+        "base": "_boundary/triangularity_upper/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "boundary/triangularity_upper/source": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/UPPERTRIANGULARITY",
+    "_boundary/triangularity_lower/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
         }
     },
-    "boundary/triangularity_lower/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY"
+    "_boundary/triangularity_lower/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY",
+            "time": true
+        }
     },
-    "line_average/n_e/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "boundary/triangularity_lower/value": {
+        "map_type": "INTERP",
+        "input": "_boundary/triangularity_lower/value",
+        "base": "_boundary/triangularity_lower/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "boundary/triangularity_lower/source": "/EPM/OUTPUT/SEPARATRIXGEOMETRY/LOWERTRIANGULARITY",
+    "_line_average/n_e/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/ESM/NEBAR"
         }
     },
-    "line_average/n_e/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/ESM/NEBAR"
+    "_line_average/n_e/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/ESM/NEBAR",
+            "time": true
+        }
     },
+    "line_average/n_e/value": {
+        "map_type": "INTERP",
+        "input": "_line_average/n_e/value",
+        "base": "_line_average/n_e/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "line_average/n_e/source": "/ESM/NEBAR",
     "_local/magnetic_axis/n_e/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+        "map_type": "PLUGIN",
+        "plugin": "UDA",
+        "args": {
             "signal": "<Not in EPM or ESM>"
         },
-        "COMMENT": "Not available currently without postprocessing"
+        "comment": "Not available currently without postprocessing"
     },
-    "_local/magnetic_axis/n_e/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Not available currently without postprocessing"
-    },
+    "_local/magnetic_axis/n_e/source": "Not available currently without postprocessing",
     "_local/magnetic_axis/t_e/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+        "map_type": "PLUGIN",
+        "plugin": "UDA",
+        "args": {
             "signal": "<Not in EPM or ESM>"
         }
     },
-    "_local/magnetic_axis/t_e/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "<Not in EPM or ESM>"
-    },
-    "heating_current_drive/power_nbi/value": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "UDA",
-        "ARGS": {
+    "_local/magnetic_axis/t_e/source": "<Not in EPM or ESM>",
+    "_heating_current_drive/power_nbi/value": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
             "signal": "/ANB/SUM/POWER"
         },
-        "SCALE": 10E6
+        "scale": 10E6
     },
-    "heating_current_drive/power_nbi/source": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "/ANB/SUM/POWER"
-    }
+    "_heating_current_drive/power_nbi/time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "UDA",
+        "args": {
+            "signal": "/ANB/SUM/POWER",
+            "time": true
+        }
+    },
+    "heating_current_drive/power_nbi/value": {
+        "map_type": "INTERP",
+        "input": "_heating_current_drive/power_nbi/value",
+        "base": "_heating_current_drive/power_nbi/time",
+        "target": "time",
+        "type": "LINEAR"
+    },
+    "heating_current_drive/power_nbi/source": "/ANB/SUM/POWER"
 }
